@@ -1,18 +1,14 @@
 'use client';
 
 import Particles from "@tsparticles/react";
-import { loadFull } from "tsparticles";
-import type { Engine } from "@tsparticles/engine";
+
 
 export default function ParticleBackground() {
-  const particlesInit = async (engine: Engine) => {
-    await loadFull(engine);
-  };
+
 
   return (
     <Particles
       id="tsparticles"
-      init={particlesInit}
       options={{
         background: {
           color: {
