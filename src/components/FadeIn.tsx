@@ -1,53 +1,47 @@
-'use client';
-
-import { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion'
+import { ReactNode } from 'react'
 
 interface FadeInProps {
-  children: React.ReactNode;
-  delay?: number;
-  duration?: number;
-  className?: string;
+  children: ReactNode
+  delay?: number
+  direction?: 'up' | 'down' | 'left' | 'right'
+  duration?: number
+  className?: string
 }
 
-export default function FadeIn({ children, delay = 0, duration = 500, className = '' }: FadeInProps) {
-  const elementRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const element = elementRef.current;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add('opacity-100', 'translate-y-0');
-              entry.target.classList.remove('opacity-0', 'translate-y-4');
-            }, delay);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-      }
-    );
-
-    if (element) {
-      observer.observe(element);
-    }
-
-    return () => {
-      if (element) {
-        observer.unobserve(element);
-      }
-    };
-  }, [delay]);
+export default function FadeIn({
+  children,
+  delay = 0,
+  direction = 'up',
+  duration = 0.5,
+  className = '',
+}: FadeInProps) {
+  const directions = {
+    up: { y: 20 },
+    down: { y: -20 },
+    left: { x: 20 },
+    right: { x: -20 },
+  }
 
   return (
-    <div
-      ref={elementRef}
-      className={`opacity-0 translate-y-4 transition-all ${className}`}
-      style={{ transitionDuration: `${duration}ms` }}
+    <motion.div
+      initial={{
+        opacity: 0,
+        ...directions[direction],
+      }}
+      animate={{
+        opacity: 1,
+        x: 0,
+        y: 0,
+      }}
+      transition={{
+        duration: duration,
+        delay: delay / 1000,
+        ease: 'easeOut',
+      }}
+      className={className}
     >
       {children}
-    </div>
-  );
+    </motion.div>
+  )
 } 
