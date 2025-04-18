@@ -43,7 +43,7 @@ export default function Home() {
     }
 
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
+      setMousePosition({ x: e.pageX, y: e.pageY })
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -158,16 +158,94 @@ export default function Home() {
 
   return (
     <div className="bg-[#1C1C1C] text-[#F4F4F4] min-h-screen relative group/spotlight">
-            <motion.div
+      <motion.div
         className="pointer-events-none absolute inset-0 z-30 transition duration-300"
         style={{
           background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(191, 161, 129, 0.08), transparent 80%)`,
         }}
       />
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-screen-xl mx-auto">
+        <header className="sticky top-0 z-30 md:hidden bg-[#1C1C1C]/90 backdrop-blur-md p-4 border-b border-[#BFA181]/10">
+          <div className="flex justify-between items-center">
+            <h2 className="font-bold text-lg text-[#BFA181]">Ajibola</h2>
+            <button 
+              className="p-2 rounded-md border border-[#BFA181]/20"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {isMenuOpen ? (
+                <X size={18} className="text-[#BFA181]" />
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-[#BFA181]"
+                >
+                  <line x1="4" y1="8" x2="20" y2="8"></line>
+                  <line x1="4" y1="16" x2="20" y2="16"></line>
+                </svg>
+              )}
+            </button>
+          </div>
+        </header>
+
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              className="fixed inset-0 z-40 md:hidden bg-[#1C1C1C]/95 flex flex-col p-6"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="flex justify-end">
+                <button 
+                  onClick={() => setIsMenuOpen(false)}
+                  aria-label="Close menu"
+                >
+                  <X size={20} className="text-[#BFA181]" />
+                </button>
+              </div>
+              <div className="flex flex-col items-center justify-center flex-1 space-y-6">
+                {[
+                  { id: "about", label: "About" },
+                  { id: "experience", label: "Experience" },
+                  { id: "projects", label: "Projects" },
+                  { id: "contact", label: "Contact" },
+                ].map((item) => (
+                  <Link
+                    key={item.id}
+                    href={`#${item.id}`}
+                    className="text-xl font-medium text-[#F4F4F4] hover:text-[#BFA181] transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+                <Link
+                  href="/AJIBOLA BAMIDELE AGIM CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center bg-[#BFA181] text-[#1C1C1C] px-4 py-2 rounded-md"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  View Résumé
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         <div className="flex flex-col md:flex-row">
-          <div className="md:fixed md:w-[340px] lg:w-[400px] md:h-screen md:overflow-y-auto z-20 bg-[#1F1F1F]">
-            <div className="p-6 md:p-8 md:h-full flex flex-col">
+          <div className="md:fixed md:w-[340px] lg:w-[400px] md:h-screen md:overflow-y-auto z-20 bg-[#1F1F1F] w-full">
+            <div className="p-6 md:p-8 md:h-full flex flex-col pt-4 md:pt-8">
               <div className="mb-6 md:mb-12">
                 <h1 className="text-2xl md:text-3xl font-bold text-[#F4F4F4]">
                   Ajibola Bamidele
@@ -256,80 +334,6 @@ export default function Home() {
           </div>
 
           <main className="flex-1 md:ml-[340px] lg:ml-[400px] relative z-10">
-            <header className="sticky top-0 z-30 md:hidden bg-[#1C1C1C]/90 backdrop-blur-md p-4 border-b border-[#BFA181]/10">
-              <div className="flex justify-between items-center">
-                <h2 className="font-bold text-lg text-[#BFA181]">Ajibola</h2>
-                <button 
-                  className="p-2 rounded-md border border-[#BFA181]/20"
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
-                >
-                  {isMenuOpen ? (
-                    <X size={18} className="text-[#BFA181]" />
-                  ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                      className="text-[#BFA181]"
-                  >
-                      <line x1="4" y1="8" x2="20" y2="8"></line>
-                      <line x1="4" y1="16" x2="20" y2="16"></line>
-                  </svg>
-                  )}
-                </button>
-              </div>
-            </header>
-
-            <AnimatePresence>
-              {isMenuOpen && (
-                <motion.div
-                  className="fixed inset-0 z-40 md:hidden bg-[#1C1C1C]/95 flex flex-col p-6"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="flex justify-end">
-                    <button onClick={() => setIsMenuOpen(false)}>
-                      <X size={20} className="text-[#BFA181]" />
-                    </button>
-                      </div>
-                  <div className="flex flex-col items-center justify-center flex-1 space-y-6">
-                    {[
-                      { id: "about", label: "About" },
-                      { id: "experience", label: "Experience" },
-                      { id: "projects", label: "Projects" },
-                      { id: "contact", label: "Contact" },
-                    ].map((item) => (
-                  <Link
-                        key={item.id}
-                        href={`#${item.id}`}
-                        className="text-xl font-medium text-[#F4F4F4] hover:text-[#BFA181] transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                        {item.label}
-                  </Link>
-                ))}
-                    <Link
-                      href="/AJIBOLA BAMIDELE AGIM CV.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-4 inline-flex items-center bg-[#BFA181] text-[#1C1C1C] px-4 py-2 rounded-md"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      View Résumé
-                    </Link>
-                  </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
             <div className="py-6 md:py-12 px-5 md:px-12 lg:px-16">
               <section id="about" ref={sectionRefs.about} className="mb-16 md:mb-24 scroll-mt-20 md:scroll-mt-24">
                 <h3 className="text-sm uppercase tracking-wider text-[#BFA181] mb-4 font-medium">About</h3>
