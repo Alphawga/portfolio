@@ -333,7 +333,7 @@ export default function Home() {
               </div>
           </div>
 
-          <main className="flex-1 md:ml-[340px] lg:ml-[400px] relative z-10">
+          <main className="flex-1 md:ml-[380px] lg:ml-[440px] relative z-10">
             <div className="py-6 md:py-12 px-5 md:px-12 lg:px-16">
               <section id="about" ref={sectionRefs.about} className="mb-16 md:mb-24 scroll-mt-20 md:scroll-mt-24">
                 <h3 className="text-sm uppercase tracking-wider text-[#BFA181] mb-4 font-medium">About</h3>
