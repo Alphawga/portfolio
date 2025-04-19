@@ -16,6 +16,7 @@ export default function Home() {
     experience: useRef<HTMLElement>(null),
     projects: useRef<HTMLElement>(null),
     contact: useRef<HTMLElement>(null),
+    
   }
 
   useEffect(() => {
