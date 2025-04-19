@@ -10,6 +10,12 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata = {
   title: "Bamidele Ajibola - Full Stack Developer",
   description: "I help founders turn ideas into seamless digital experiences",
+  icons: {
+    icon: [
+      { url: '/icons/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico' }
+    ]
+  }
 }
 
 export default function RootLayout({
