@@ -66,7 +66,7 @@ export default function Home() {
       title: "Traders Bloc",
       description: "A secure lending platform revolutionizing financial transactions.",
       image: "/traders.png",
-      link: "https://github.com/Alphawga/traders-bloc-backend",
+      link: "https://traders-bloc-backend.vercel.app/",
       tags: ["Node.js", "React", "Express", "Payment Integration", "RESTful API"],
       details: [
         "Implemented role-based access controls, ensuring 100% data security compliance.",
@@ -109,18 +109,7 @@ export default function Home() {
       ],
       accentColor: "mutedGold",
     },
-    {
-      id: 5,
-      title: "Placeholder Project",
-      description: "Description for the fifth placeholder project.",
-      image: "/placeholder.svg",
-      link: "#",
-      tags: ["Placeholder", "Tech"],
-      details: [
-        "Detail about the placeholder project.",
-      ],
-      accentColor: "accentBlue",
-    },
+    
   ]
 
   const experience = [
