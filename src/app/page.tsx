@@ -5,6 +5,7 @@ import { X, Github, Linkedin, Mail, ArrowRight, ArrowUpRight } from "lucide-reac
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
+import ContactForm from "@/components/ContactForm"
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -65,7 +66,7 @@ export default function Home() {
       title: "Traders Bloc",
       description: "A secure lending platform revolutionizing financial transactions.",
       image: "/traders.png",
-      link: "#",
+      link: "https://github.com/Alphawga/traders-bloc-backend",
       tags: ["Node.js", "React", "Express", "Payment Integration", "RESTful API"],
       details: [
         "Implemented role-based access controls, ensuring 100% data security compliance.",
@@ -77,7 +78,7 @@ export default function Home() {
       title: "SchoolWave",
       description: "AI-powered school management system transforming educational operations.",
       image: "/schoolwave.png",
-      link: "#",
+      link: "https://schoolwave.ng/",
       tags: ["AI/ML", "React", "Node.js", "Analytics", "MongoDB"],
       details: [
         "Designed AI-driven result processing algorithms, reducing manual workload by 70%.",
@@ -89,7 +90,7 @@ export default function Home() {
       title: "TechHill LMS",
       description: "A modern learning management system enhancing educational experiences.",
       image: "/techill.png",
-      link: "#",
+      link: "https://www.techill.ng/",
       tags: ["React.js", "Next.js", "Database Optimization", "Analytics"],
       details: [
         "Delivered an intuitive React.js front end, improving user experience for 10,000+ learners.",
@@ -101,7 +102,7 @@ export default function Home() {
       title: "OKOH ERP System",
       description: "Custom enterprise resource planning solution for streamlined operations.",
       image: "/okoh.png",
-      link: "#",
+      link: "https://www.okohinternational.com/",
       tags: [".NET", "React.js", "SQL", "Node.js", "Express.js"],
       details: [
         "Designed scalable backend logic, reducing processing delays by 20%.",
@@ -124,36 +125,36 @@ export default function Home() {
 
   const experience = [
     {
-      date: "2022 — Present",
-      title: "Senior Full Stack Developer",
-      company: "Fintech Solutions",
-      link: "https://example.com",
-      description: "Build and maintain critical components used to construct modern financial applications. Work closely with cross-functional teams, including developers, designers, and product managers, to implement and advocate for best practices in web accessibility.",
-      tags: ["JavaScript", "TypeScript", "React", "Node.js"]
-    },
-    {
-      date: "2020 — 2022",
+      date: "2021 — Present",
       title: "Full Stack Developer",
-      company: "Tech Innovations Inc",
-      link: "https://example.com",
-      description: "Developed and optimized web applications for enterprise clients. Led a team of 3 developers on various projects, improving development workflow and code quality standards.",
-      tags: ["React", "Express", "MongoDB", "AWS"]
+      company: "Innovar Ideas",
+      link: "https://innovartech.ng/",
+      description: "Designed and scaled web applications using React.js and Next.js while building secure RESTful APIs and collaborating with international teams.",
+      tags: ["React.js", "Next.js", "Node.js", "RESTful APIs", "CI/CD"]
     },
     {
-      date: "2018 — 2020",
-      title: "Frontend Developer",
-      company: "Digital Agency",
-      link: "https://example.com",
-      description: "Created responsive interfaces for various clients across different industries. Worked directly with clients to gather requirements and implement solutions that exceeded expectations.",
-      tags: ["JavaScript", "HTML/CSS", "Vue.js"]
+      date: "2020 — 2021",
+      title: "Backend Engineer",
+      company: "Trade Depot",
+      link: "https://www.tradedepot.co/",
+      description: "Diagnosed and resolved critical backend issues for logistics systems, enhancing uptime for 200+ drivers while optimizing database queries and integrations.",
+      tags: ["Node.js", "Database Optimization", "API Development", "Debugging"]
     },
     {
-      date: "2016 — 2018",
-      title: "Junior Developer",
-      company: "Startup Co.",
-      link: "https://example.com",
-      description: "Assisted senior developers in building and testing new features.",
-      tags: ["HTML", "CSS", "JavaScript"]
+      date: "2017 — 2020",
+      title: "Web Developer",
+      company: "AG Scholar",
+      link: "#",
+      description: "Developed and maintained interactive web platforms for educational services, enhancing cross-browser compatibility and ensuring 95% accessibility compliance.",
+      tags: ["HTML/CSS", "JavaScript", "Cross-browser Compatibility", "User Experience"]
+    },
+    {
+      date: "2024 — Present",
+      title: "Full Stack Development Instructor",
+      company: "Next Generation Genius (NGG)",
+      link: "https://next.afrovanguard.org.ng/",
+      description: "Mentored 20+ students in full-stack technologies, contributing to their career advancement through practical training and guidance.",
+      tags: ["Mentoring", "Technical Training", "Full Stack Development"]
     },
   ]
 
@@ -458,55 +459,10 @@ export default function Home() {
                   </p>
                   
                   <div className="bg-[#1C1C1C]/80 backdrop-blur-md rounded-lg p-5 border border-[#BFA181]/20 shadow-lg">
-                    <form className="space-y-4">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                          <label htmlFor="name" className="block text-[#D4C5B0] mb-1 text-sm">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                            className="w-full px-3 py-2 bg-[#1C1C1C] border border-[#BFA181]/30 rounded-md focus:outline-none focus:ring-1 focus:ring-[#BFA181] focus:border-transparent text-[#F4F4F4] text-sm"
-                      placeholder="Your name"
-                            required
-                    />
-                  </div>
-                  <div>
-                          <label htmlFor="email" className="block text-[#D4C5B0] mb-1 text-sm">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                            className="w-full px-3 py-2 bg-[#1C1C1C] border border-[#BFA181]/30 rounded-md focus:outline-none focus:ring-1 focus:ring-[#BFA181] focus:border-transparent text-[#F4F4F4] text-sm"
-                      placeholder="Your email"
-                            required
-                    />
+                    <ContactForm />
                   </div>
                 </div>
-                <div>
-                        <label htmlFor="message" className="block text-[#D4C5B0] mb-1 text-sm">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                          rows={4}
-                          className="w-full px-3 py-2 bg-[#1C1C1C] border border-[#BFA181]/30 rounded-md focus:outline-none focus:ring-1 focus:ring-[#BFA181] focus:border-transparent text-[#F4F4F4] text-sm"
-                    placeholder="Your message"
-                          required
-                  ></textarea>
-                </div>
-                      <button 
-                        type="submit" 
-                        className="bg-[#BFA181] text-[#1C1C1C] px-4 py-2 rounded-md hover:bg-[#AD8D6F] transition-colors text-sm"
-                      >
-                    Send Message
-                  </button>
-              </form>
-            </div>
-        </div>
-      </section>
+              </section>
 
               <footer className="pt-4 pb-6 border-t border-[#BFA181]/10">
                 <div className="max-w-xl">

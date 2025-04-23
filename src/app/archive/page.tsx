@@ -15,102 +15,102 @@ export default function ProjectArchive() {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A full-featured online shopping platform with advanced product filtering and secure checkout.",
-      image: "/project1.jpg",
-      link: "https://example.com/project1",
-      tags: ["Next.js", "TailwindCSS", "Stripe", "Prisma"],
-      details: "Built a scalable e-commerce solution with real-time inventory management, customer authentication, and secure payment processing. Implemented advanced product filtering, search functionality, and responsive design for optimal mobile experience.",
+      title: "PrecisionGrammar",
+      description: "Elevate Your Content. Achieve Excellence. Professional, Accurate, and Reliable Document Reviews.",
+      image: "/placeholder.svg",
+      link: "https://precisiongrammar.com",
+      tags: ["Document Review", "Content Editing", "Proofreading", "Professional Writing"],
+      details: "Professional, Accurate, and Reliable Document Reviews Tailored to Your Needs. Our service helps writers and professionals elevate their content with expert grammatical review and content improvement suggestions.",
       accentColor: "blue"
     },
     {
       id: 2,
-      title: "Healthcare Management System",
-      description: "Electronic health record system for medical practitioners with patient management features.",
-      image: "/project2.jpg",
-      link: "https://example.com/project2",
-      tags: ["React", "Node.js", "MongoDB", "Express"],
-      details: "Developed a HIPAA-compliant electronic health record system featuring appointment scheduling, patient records management, and billing integration. Implemented role-based access control and audit trails for enhanced security.",
+      title: "EasyMultiLingo",
+      description: "Streamline your workflow, ensure accuracy, and collaborate seamlessly using our advanced review platform.",
+      image: "/placeholder.svg",
+      link: "https://easymultilingo.com",
+      tags: ["Multilingual", "Document Review", "Collaboration", "Workflow"],
+      details: "Elevate Your Document Review Process with EasyMultiLingo. Save time, boost productivity, and achieve professional results—all in one place. Our platform specializes in multilingual document review and collaboration.",
       accentColor: "green"
     },
     {
       id: 3,
-      title: "Financial Dashboard",
-      description: "Interactive dashboard for monitoring investments, expenses, and financial planning.",
-      image: "/project3.jpg",
-      link: "https://example.com/project3",
-      tags: ["TypeScript", "D3.js", "Firebase", "Redux"],
-      details: "Created a real-time financial analytics dashboard with interactive data visualizations, transaction categorization, and budget forecasting tools. Integrated with multiple financial APIs and implemented secure OAuth authentication.",
+      title: "PrecisionKeywords",
+      description: "Tailor-made SEO strategies to increase market potential and achieve competitive search rankings.",
+      image: "/placeholder.svg",
+      link: "https://precisionkeywords.com",
+      tags: ["SEO", "Digital Marketing", "Keyword Strategy", "Website Growth"],
+      details: "Accelerate your digital success with our tailor-made SEO strategies. Increase your market potential, achieve competitive search rankings, and fuel website growth—fast. Our approach focuses on targeted keyword optimization for maximum impact.",
       accentColor: "amber"
     },
     {
       id: 4,
-      title: "Social Media Analytics Tool",
-      description: "Platform for tracking and analyzing social media performance across multiple channels.",
-      image: "/project4.jpg", 
-      link: "https://example.com/project4",
-      tags: ["Python", "React", "PostgreSQL", "AWS"],
-      details: "Built a comprehensive analytics platform that aggregates data from multiple social media APIs, providing actionable insights through customizable dashboards and automated reporting. Implemented sentiment analysis and trend detection using machine learning algorithms.",
+      title: "EatCleanFit",
+      description: "Fuel Your Body with Delicious, Healthy Meals that Prevent Disease and Promote Well-being.",
+      image: "/placeholder.svg", 
+      link: "https://eatcleanfit.com",
+      tags: ["Nutrition", "Meal Planning", "Health", "Wellness"],
+      details: "Explore our collection of tasty pasta options, carefully designed to simplify your meal planning, promote your well-being, and keep every bite satisfying. Our focus is on clean eating for optimal fitness and health outcomes.",
       accentColor: "red"
     },
     {
       id: 5,
-      title: "Fitness Tracking Application",
-      description: "Mobile-first web app for tracking workouts, nutrition, and fitness progress.",
-      image: "/project5.jpg",
-      link: "https://example.com/project5",
-      tags: ["React Native", "GraphQL", "MongoDB", "Node.js"],
-      details: "Developed a comprehensive fitness tracking solution with workout planning, nutrition logging, and progress visualization. Implemented geolocation for outdoor activities, heart rate monitor integration, and social sharing features.",
+      title: "CopyImpactHub",
+      description: "Transform Your Brand With Copy That Inspires Action and Drives Growth.",
+      image: "/placeholder.svg",
+      link: "https://copyimpacthub.com",
+      tags: ["Copywriting", "Content Marketing", "SEO Content", "Brand Development"],
+      details: "At CopyImpactHub, we deliver polished, SEO-optimized content designed to engage, rank, and grow. Our team specializes in creating compelling copy that resonates with audiences and inspires them to take action.",
       accentColor: "purple"
     },
     {
       id: 6,
-      title: "Content Management System",
-      description: "Custom CMS built for digital publishers with advanced content creation tools.",
-      image: "/project6.jpg",
-      link: "https://example.com/project6",
-      tags: ["Vue.js", "Laravel", "MySQL", "Docker"],
-      details: "Created a flexible content management system with a WYSIWYG editor, media library, and scheduled publishing. Implemented user role management, content versioning, and SEO optimization tools tailored for digital publishers.",
+      title: "FitNutritionGuide",
+      description: "Complete nutrition services with fastest delivery and easy pickup options.",
+      image: "/placeholder.svg",
+      link: "https://fitnutritionguide.com",
+      tags: ["Nutrition", "Food Delivery", "Meal Planning", "Health"],
+      details: "Comprehensive nutrition guide with convenient food delivery service. Our platform combines expert nutrition advice with practical meal options that can be quickly delivered or easily picked up, making healthy eating accessible.",
       accentColor: "teal"
     },
     {
       id: 7,
-      title: "Real Estate Listing Platform",
-      description: "Property search and listing platform with virtual tour capabilities.",
-      image: "/project7.jpg",
-      link: "https://example.com/project7",
-      tags: ["Angular", "Node.js", "MongoDB", "Three.js"],
-      details: "Built a feature-rich real estate platform with advanced property search, interactive maps, and virtual property tours. Implemented agent dashboards, lead management tools, and automated listing verification.",
+      title: "DissertCoach",
+      description: "Expert Document Review & Analysis Services for Academic Excellence.",
+      image: "/placeholder.svg",
+      link: "https://dissertcoach.com",
+      tags: ["Academic", "Document Review", "Analysis", "Research"],
+      details: "Fast, accurate, and multilingual document review solutions tailored specifically for your academic needs. Our service specializes in dissertation review, research paper analysis, and academic document enhancement.",
       accentColor: "sky"
     },
     {
       id: 8,
-      title: "Learning Management System",
-      description: "Educational platform for course creation, student enrollment, and progress tracking.",
-      image: "/project8.jpg",
-      link: "https://example.com/project8",
-      tags: ["React", "Django", "PostgreSQL", "Redis"],
-      details: "Developed a comprehensive LMS with course authoring tools, interactive assessments, and student progress analytics. Implemented video streaming integration, discussion forums, and certificate generation.",
+      title: "AIQuickTag",
+      description: "Intelligent AI Tagging for Superior Content Management and Organization.",
+      image: "/placeholder.svg",
+      link: "https://aiquicktag.com",
+      tags: ["AI", "Content Management", "Tagging", "Automation"],
+      details: "Boost productivity, simplify content organization, and enhance searchability through powerful AI-generated tags. Our platform uses advanced artificial intelligence to automatically categorize and tag content for improved management.",
       accentColor: "green"
     },
     {
       id: 9,
-      title: "Event Management Platform",
-      description: "End-to-end solution for planning, promoting, and managing events of all sizes.",
-      image: "/project9.jpg",
-      link: "https://example.com/project9",
-      tags: ["Next.js", "Node.js", "MongoDB", "Stripe"],
-      details: "Created an event management system with ticketing, attendee management, and event promotion tools. Implemented QR code check-in, seating arrangements, and post-event analytics dashboards.",
+      title: "SnackToFit",
+      description: "Healthy snack options designed for active lifestyles and fitness enthusiasts.",
+      image: "/placeholder.svg",
+      link: "https://snacktofit.com",
+      tags: ["Nutrition", "Snacks", "Fitness", "Health"],
+      details: "Carefully crafted healthy snack options that support your fitness goals and active lifestyle. Our products balance nutrition and taste, providing convenient energy boosting options for busy professionals and athletes.",
       accentColor: "violet"
     },
     {
       id: 10,
-      title: "Supply Chain Management System",
-      description: "Enterprise solution for tracking inventory, suppliers, and logistics.",
-      image: "/project10.jpg",
-      link: "https://example.com/project10",
-      tags: ["React", "Spring Boot", "PostgreSQL", "Docker"],
-      details: "Developed a comprehensive supply chain management system with inventory tracking, supplier management, and logistics optimization. Implemented barcode scanning, predictive analytics for inventory forecasting, and real-time shipping updates.",
+      title: "BeatzPal",
+      description: "Music collaboration platform for artists, producers, and audio professionals.",
+      image: "/placeholder.svg",
+      link: "https://beatzpal.com",
+      tags: ["Music", "Collaboration", "Audio Production", "Artists"],
+      details: "Digital platform enabling seamless collaboration between musicians, producers, and audio professionals. Share tracks, collaborate on projects, and connect with fellow artists in an integrated environment designed for creative expression.",
       accentColor: "orange"
     }
   ]
@@ -119,35 +119,35 @@ export default function ProjectArchive() {
   const clientProjects = [
     {
       id: 101,
-      title: "Enterprise Resource Planning System",
-      client: "Manufacturing Corp",
-      description: "Custom ERP solution integrating production, inventory, sales, and finance modules.",
-      tags: ["React", "Java", "Oracle", "Docker"],
-      year: "2022"
+      title: "Grammar Correction API",
+      client: "Education Technology Firm",
+      description: "Advanced API for detecting and correcting grammatical errors in educational content.",
+      tags: ["NLP", "API Development", "Education Tech", "Python"],
+      year: "2023"
     },
     {
       id: 102,
-      title: "Digital Banking Platform",
-      client: "Financial Services Inc",
-      description: "Secure online banking solution with transaction management and financial planning tools.",
-      tags: ["Angular", "Spring Boot", "PostgreSQL", "AWS"],
-      year: "2021"
+      title: "Multilingual Document System",
+      client: "International Publishing Company",
+      description: "Robust system for managing multilingual document workflows and translations.",
+      tags: ["React", "Node.js", "MongoDB", "i18n"],
+      year: "2022"
     },
     {
       id: 103,
-      title: "Hotel Management System",
-      client: "Luxury Hotels Group",
-      description: "Comprehensive property management system with booking, guest services, and analytics.",
-      tags: ["Vue.js", "Node.js", "MongoDB", "Redis"],
-      year: "2020"
+      title: "SEO Analytics Dashboard",
+      client: "Digital Marketing Agency",
+      description: "Comprehensive dashboard for tracking and optimizing SEO performance metrics.",
+      tags: ["Vue.js", "D3.js", "API Integration", "Analytics"],
+      year: "2021"
     },
     {
       id: 104,
-      title: "E-Learning Platform",
-      client: "Education Institute",
-      description: "Interactive learning platform with course management, assessments, and student analytics.",
-      tags: ["React", "Django", "PostgreSQL", "AWS"],
-      year: "2019"
+      title: "Nutrition Planning Platform",
+      client: "Health & Wellness Startup",
+      description: "Interactive platform for personalized nutrition planning and meal recommendations.",
+      tags: ["React", "Node.js", "PostgreSQL", "Machine Learning"],
+      year: "2020"
     }
   ]
 
@@ -391,7 +391,7 @@ export default function ProjectArchive() {
             <div className="mb-16 p-6 border border-[#BFA181]/20 rounded-lg bg-[#1F1F1F] text-center">
               <h2 className="text-2xl font-semibold text-[#F4F4F4] mb-3">Interested in working together?</h2>
               <p className="text-[#D4C5B0] text-sm mb-6 max-w-lg mx-auto">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
               </p>
               <Link 
                 href="/#contact" 

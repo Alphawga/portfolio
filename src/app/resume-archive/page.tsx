@@ -10,123 +10,142 @@ export default function ResumeArchive() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  // Define full experience array including additional entries not shown on home page
+  // Define full experience array based on provided resume
   const experiences = [
     {
       id: 1,
-      title: "Senior Frontend Engineer",
-      company: "Finance Corporation",
-      date: "2022 - Present",
-      description: "Leading frontend development for an enterprise financial platform serving over 500,000 users worldwide.",
-      tags: ["React", "Next.js", "TypeScript", "TailwindCSS", "Redux"],
+      title: "Full Stack Developer",
+      company: "Innovar Ideas",
+      companyUrl: "https://innovartech.ng/",
+      date: "2021 - Present",
+      description: "Leading development of web applications and APIs while collaborating with international teams.",
+      tags: ["React.js", "Next.js", "Node.js", "RESTful APIs", "CI/CD"],
       details: [
-        "Architected and implemented a component library that reduced development time by 40%",
-        "Led migration from legacy codebase to Next.js, improving performance metrics by 60%",
-        "Mentored junior developers and established code quality standards",
-        "Collaborated with design team to create an accessible UI/UX system"
+        "Designed and scaled web applications using React.js and Next.js",
+        "Reduced API response times by 40% through optimized server-side logic in Node.js",
+        "Built secure RESTful APIs, increasing system reliability and ensuring industry-standard compliance",
+        "Collaborated with international teams, implementing robust data pipelines for enhanced accessibility",
+        "Deployed daily updates via CI/CD pipelines, maintaining 99.9% system uptime"
       ]
     },
     {
       id: 2,
-      title: "Fullstack Developer",
-      company: "Tech Innovations Ltd",
-      date: "2020 - 2022",
-      description: "Developed and maintained scalable web applications for clients across diverse industries.",
-      tags: ["JavaScript", "Node.js", "Express", "MongoDB", "React"],
+      title: "Backend Engineer",
+      company: "Trade Depot",
+      companyUrl: "https://www.tradedepot.co/",
+      date: "2020 - 2021",
+      description: "Improved backend systems for logistics operations, enhancing reliability and performance.",
+      tags: ["Node.js", "Database Optimization", "API Development", "Debugging"],
       details: [
-        "Built RESTful APIs handling 1M+ daily requests with 99.9% uptime",
-        "Implemented real-time features using WebSockets for collaborative tools",
-        "Optimized database queries, reducing response times by 35%",
-        "Integrated third-party services and payment gateways for e-commerce solutions"
+        "Diagnosed and resolved critical backend issues for logistics systems, enhancing uptime for 200+ drivers",
+        "Streamlined backend workflows, reducing debugging time by 25%",
+        "Contributed to improving app stability by optimizing database queries and integrations"
       ]
     },
     {
       id: 3,
-      title: "Frontend Developer",
-      company: "Digital Solutions Inc",
-      date: "2018 - 2020",
-      description: "Created responsive web interfaces for enterprise clients in the healthcare and finance sectors.",
-      tags: ["HTML/CSS", "JavaScript", "React", "Redux", "Jest"],
+      title: "Web Developer",
+      company: "AG Scholar",
+      companyUrl: "#",
+      date: "2017 - 2020",
+      description: "Developed and maintained interactive web platforms for educational services.",
+      tags: ["HTML/CSS", "JavaScript", "Cross-browser Compatibility", "User Experience"],
       details: [
-        "Developed modular React components for a healthcare management system",
-        "Implemented state management solutions using Redux and Context API",
-        "Created comprehensive test suites achieving 90%+ code coverage",
-        "Collaborated with UI/UX team to implement pixel-perfect designs"
-      ]
-    },
-    {
-      id: 4,
-      title: "Junior Web Developer",
-      company: "StartUp Ventures",
-      date: "2017 - 2018",
-      description: "Contributed to frontend and backend development for early-stage startups.",
-      tags: ["HTML/CSS", "JavaScript", "PHP", "MySQL", "jQuery"],
-      details: [
-        "Built responsive websites for clients across multiple industries",
-        "Implemented custom WordPress themes and plugins",
-        "Developed and maintained database schemas for web applications",
-        "Created interactive UI elements using JavaScript and jQuery"
-      ]
-    },
-    {
-      id: 5,
-      title: "Web Development Intern",
-      company: "Design Agency",
-      date: "2016 - 2017",
-      description: "Assisted in the development and maintenance of client websites and web applications.",
-      tags: ["HTML/CSS", "JavaScript", "WordPress", "Bootstrap"],
-      details: [
-        "Developed and maintained client websites using WordPress",
-        "Created responsive layouts using Bootstrap and custom CSS",
-        "Assisted senior developers with debugging and fixing issues",
-        "Participated in client meetings and requirement gathering sessions"
-      ]
-    },
-    {
-      id: 6,
-      title: "Freelance Web Developer",
-      company: "Self-employed",
-      date: "2015 - 2016",
-      description: "Provided web development services to small businesses and individuals.",
-      tags: ["HTML/CSS", "JavaScript", "PHP", "WordPress"],
-      details: [
-        "Designed and developed websites for small businesses",
-        "Implemented e-commerce solutions using WooCommerce",
-        "Provided maintenance and support services",
-        "Consulted on SEO and web performance optimization"
+        "Developed and maintained interactive web platforms, driving a 25% increase in user engagement",
+        "Enhanced cross-browser compatibility, ensuring 95% accessibility compliance",
+        "Regularly updated features, improving user retention by 15%"
       ]
     }
   ]
 
-  // Education entries
-  const education = [
+  // Projects section from resume
+  const projects = [
     {
       id: 1,
-      degree: "Master of Science in Computer Science",
-      institution: "Technology University",
-      date: "2019 - 2021",
-      description: "Specialized in Web Technologies and Human-Computer Interaction",
+      title: "Traders Bloc",
+      description: "A secure lending platform revolutionizing financial transactions.",
       details: [
-        "GPA: 3.8/4.0",
-        "Thesis: \"Improving User Experience in Progressive Web Applications\"",
-        "Recipient of Academic Excellence Scholarship"
-      ]
+        "Implemented role-based access controls, ensuring 100% data security compliance",
+        "Streamlined payment workflows, reducing transaction processing time by 35%"
+      ],
+      tags: ["Security", "Payments", "Role-based Access"],
+      link: "https://github.com/Alphawga/traders-bloc-backend"
     },
     {
       id: 2,
-      degree: "Bachelor of Science in Software Engineering",
-      institution: "National University",
-      date: "2014 - 2018",
-      description: "Focus on Software Development and Database Systems",
+      title: "SchoolWave",
+      description: "AI-powered school management system.",
       details: [
-        "GPA: 3.6/4.0",
-        "Capstone Project: E-commerce Platform with Recommendation System",
-        "Dean's List for 6 consecutive semesters"
+        "Designed AI-driven result processing algorithms, reducing manual workload by 70%",
+        "Built interactive dashboards for administrators, increasing decision-making efficiency",
+        "Integrated machine learning models to track student performance with 90% accuracy"
+      ],
+      tags: ["AI/ML", "Analytics", "Education Tech"],
+      link: "https://schoolwave.ng/"
+    },
+    {
+      id: 3,
+      title: "TechHill LMS",
+      description: "A modern learning management system.",
+      details: [
+        "Delivered an intuitive React.js front end, improving user experience for 10,000+ learners",
+        "Optimized server-side rendering with Next.js, cutting load times by 50%",
+        "Integrated analytics tools to track user engagement and performance metrics"
+      ],
+      tags: ["React.js", "Next.js", "Analytics"],
+      link: "https://www.techill.ng/"
+    },
+    {
+      id: 4,
+      title: "OKOH Enterprise Management System",
+      description: "Custom ERP solution.",
+      details: [
+        "Designed scalable backend logic, reducing processing delays by 20%",
+        "Improved workflow automation, saving 10+ hours/week for administrative staff",
+        "Built a scalable backend with Node.js and Express.js, handling 10,000+ daily transactions"
+      ],
+      tags: ["ERP", "Node.js", "Workflow Automation"],
+      link: "https://www.okohinternational.com/"
+    }
+  ]
+
+  // Education entry
+  const education = [
+    {
+      id: 1,
+      degree: "Higher National Diploma in Computer Science Technology",
+      institution: "Ogun State Institute of Technology",
+      date: "Completed",
+      description: "Focused on computer science fundamentals and practical applications",
+      details: []
+    }
+  ]
+
+  
+  const volunteer = [
+    {
+      id: 1,
+      title: "Full Stack Development Instructor",
+      organization: "Next Generation Genius (NGG)",
+      organizationUrl: "https://next.afrovanguard.org.ng/",
+      date: "January 2024 - Present",
+      description: "Mentoring students in full-stack development technologies",
+      details: [
+        "Mentored 20+ students in full-stack technologies, contributing to their career advancement"
       ]
     }
   ]
 
-  // Mouse tracking effect
+  const skills = {
+    languages: ["JavaScript (ES6+)", "Python", "Ruby", "Swift", "Java"],
+    frontend: ["React.js", "Next.js", "HTML/CSS"],
+    backend: ["Node.js", "Django", "Flask", "Ruby on Rails"],
+    databases: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Prisma ORM"],
+    devops: ["AWS", "Docker", "Git", "CI/CD"],
+    tools: ["Protocol Buffers", "gRPC", "Postman", "VS Code"]
+  }
+
+ 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.pageX, y: e.pageY })
@@ -257,12 +276,49 @@ export default function ResumeArchive() {
                   <p className="text-[#D4C5B0] text-sm">Get a comprehensive PDF version of my resume</p>
                 </div>
                 <a 
-                  href="#" 
+                  href="/AJIBOLA BAMIDELE AGIM CV.pdf" 
+                  download
                   className="inline-flex items-center gap-2 px-4 py-2 mt-4 md:mt-0 border border-[#BFA181] text-[#BFA181] hover:bg-[#BFA181] hover:text-[#1C1C1C] rounded-md transition-colors font-medium"
                 >
                   <Download size={16} />
                   <span>Download PDF</span>
                 </a>
+              </div>
+            </div>
+
+            {/* Summary Section */}
+            <div className="mb-12 p-4 md:p-6 border border-[#BFA181]/20 rounded-lg bg-[#1F1F1F]">
+              <h2 className="text-sm uppercase tracking-wider text-[#BFA181] mb-4 font-medium">Summary</h2>
+              <p className="text-[#D4C5B0] text-sm leading-relaxed">
+                Results-oriented Full Stack Developer with 7+ years of experience delivering scalable, secure, and innovative solutions across web, SaaS, and enterprise domains. Adept at bridging technical and business needs, with a proven track record in AI-powered systems, cloud architectures, and collaborative global teams. Passionate about driving economic empowerment through impactful technology.
+              </p>
+            </div>
+
+            {/* Core Competencies */}
+            <div className="mb-12">
+              <h2 className="text-sm uppercase tracking-wider text-[#BFA181] mb-6 font-medium">Core Competencies</h2>
+              
+              <div className="space-y-3">
+                <div className="flex items-start">
+                  <div className="min-w-[200px] text-[#F4F4F4] font-medium text-sm">Full Stack Development</div>
+                  <div className="text-[#D4C5B0] text-sm">Proficient in building end-to-end solutions with modern frameworks.</div>
+                </div>
+                <div className="flex items-start">
+                  <div className="min-w-[200px] text-[#F4F4F4] font-medium text-sm">AI/ML Integration</div>
+                  <div className="text-[#D4C5B0] text-sm">Expertise in deploying machine learning models for SaaS and enterprise tools.</div>
+                </div>
+                <div className="flex items-start">
+                  <div className="min-w-[200px] text-[#F4F4F4] font-medium text-sm">Cloud Scalability</div>
+                  <div className="text-[#D4C5B0] text-sm">Extensive experience in cloud-native applications on AWS and CI/CD pipelines.</div>
+                </div>
+                <div className="flex items-start">
+                  <div className="min-w-[200px] text-[#F4F4F4] font-medium text-sm">Team Collaboration</div>
+                  <div className="text-[#D4C5B0] text-sm">Proven ability to work with distributed teams and mentor aspiring developers.</div>
+                </div>
+                <div className="flex items-start">
+                  <div className="min-w-[200px] text-[#F4F4F4] font-medium text-sm">Performance Optimization</div>
+                  <div className="text-[#D4C5B0] text-sm">Skilled in improving system performance and data security.</div>
+                </div>
               </div>
             </div>
 
@@ -289,7 +345,15 @@ export default function ResumeArchive() {
                     <div className="transition-all duration-300 group-hover:translate-x-1">
                       <div className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-4 mb-2">
                         <h3 className="text-lg font-semibold text-[#F4F4F4]">{experience.title}</h3>
-                        <div className="text-sm text-[#BFA181]">{experience.company}</div>
+                        <div className="text-sm text-[#BFA181]">
+                          {experience.companyUrl !== "#" ? (
+                            <a href={experience.companyUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                              {experience.company}
+                            </a>
+                          ) : (
+                            experience.company
+                          )}
+                        </div>
                         <div className="text-xs text-[#D4C5B0]/70">{experience.date}</div>
                       </div>
                       
@@ -309,6 +373,46 @@ export default function ResumeArchive() {
                         ))}
                       </ul>
                     </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Projects Section */}
+            <div className="mb-16">
+              <h2 className="text-sm uppercase tracking-wider text-[#BFA181] mb-6 font-medium">Notable Projects</h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {projects.map((project) => (
+                  <div 
+                    key={project.id} 
+                    className="p-4 border border-[#BFA181]/20 rounded-lg bg-[#1F1F1F] hover:border-[#BFA181]/50 transition-all duration-300 group"
+                  >
+                    <h3 className="text-lg font-semibold text-[#F4F4F4] mb-2 group-hover:text-[#BFA181] transition-colors">
+                      {project.link !== "#" ? (
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover:underline inline-flex items-center">
+                          {project.title}
+                          <ArrowUpRight className="ml-1 h-4 w-4 opacity-70" />
+                        </a>
+                      ) : (
+                        project.title
+                      )}
+                    </h3>
+                    <p className="text-[#D4C5B0] text-sm mb-3">{project.description}</p>
+                    
+                    <div className="flex flex-wrap gap-1.5 mb-3">
+                      {project.tags.map((tag, i) => (
+                        <span key={i} className="px-2 py-0.5 text-[10px] rounded-full bg-[#252525] border border-[#BFA181]/30 text-[#D4C5B0]">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <ul className="list-disc list-inside text-[#D4C5B0] text-xs space-y-1.5 ml-1">
+                      {project.details.map((detail, i) => (
+                        <li key={i}>{detail}</li>
+                      ))}
+                    </ul>
                   </div>
                 ))}
               </div>
@@ -343,8 +447,58 @@ export default function ResumeArchive() {
                       
                       <p className="text-[#D4C5B0] text-sm mb-3">{edu.description}</p>
                       
+                      {edu.details.length > 0 && (
+                        <ul className="list-disc list-inside text-[#D4C5B0] text-xs space-y-1.5 ml-1">
+                          {edu.details.map((detail, i) => (
+                            <li key={i}>{detail}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Volunteer Section */}
+            <div className="mb-16">
+              <h2 className="text-sm uppercase tracking-wider text-[#BFA181] mb-6 font-medium">Volunteer Experience</h2>
+              
+              <div className="space-y-8">
+                {volunteer.map((exp, index) => (
+                  <div 
+                    key={exp.id}
+                    className="relative pl-8 md:pl-10 pb-8 group"
+                  >
+                    {/* Timeline connector */}
+                    {index < volunteer.length - 1 && (
+                      <div className="absolute left-3 md:left-4 top-3 bottom-0 w-0.5 bg-[#BFA181]/30 group-hover:bg-[#BFA181]/50 transition-colors duration-300"></div>
+                    )}
+                    
+                    {/* Timeline dot */}
+                    <div className="absolute left-0 top-1 w-6 h-6 md:w-8 md:h-8 rounded-full border-2 border-[#BFA181]/30 flex items-center justify-center group-hover:border-[#BFA181] transition-colors duration-300">
+                      <div className="w-2 h-2 md:w-3 md:h-3 bg-[#BFA181]/50 rounded-full group-hover:bg-[#BFA181] transition-colors duration-300"></div>
+                    </div>
+                    
+                    <div className="transition-all duration-300 group-hover:translate-x-1">
+                      <div className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-4 mb-2">
+                        <h3 className="text-lg font-semibold text-[#F4F4F4]">{exp.title}</h3>
+                        <div className="text-sm text-[#BFA181]">
+                          {exp.organizationUrl ? (
+                            <a href={exp.organizationUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                              {exp.organization}
+                            </a>
+                          ) : (
+                            exp.organization
+                          )}
+                        </div>
+                        <div className="text-xs text-[#D4C5B0]/70">{exp.date}</div>
+                      </div>
+                      
+                      <p className="text-[#D4C5B0] text-sm mb-3">{exp.description}</p>
+                      
                       <ul className="list-disc list-inside text-[#D4C5B0] text-xs space-y-1.5 ml-1">
-                        {edu.details.map((detail, i) => (
+                        {exp.details.map((detail, i) => (
                           <li key={i}>{detail}</li>
                         ))}
                       </ul>
@@ -356,34 +510,50 @@ export default function ResumeArchive() {
 
             {/* Skills Section */}
             <div className="mb-16">
-              <h2 className="text-sm uppercase tracking-wider text-[#BFA181] mb-6 font-medium">Core Skills</h2>
+              <h2 className="text-sm uppercase tracking-wider text-[#BFA181] mb-6 font-medium">Technical Skills</h2>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {[
-                  "JavaScript/TypeScript", 
-                  "React/Next.js", 
-                  "Node.js",
-                  "HTML/CSS",
-                  "MongoDB",
-                  "RESTful APIs",
-                  "Redux/Context API",
-                  "Tailwind CSS",
-                  "GraphQL",
-                  "Testing (Jest/RTL)",
-                  "UI/UX Design",
-                  "Git/Version Control",
-                  "Performance Optimization",
-                  "Responsive Design",
-                  "Agile/Scrum",
-                  "CI/CD"
-                ].map((skill, index) => (
-                  <div 
-                    key={index}
-                    className="p-3 border border-[#BFA181]/20 rounded-md bg-[#1F1F1F] text-center hover:border-[#BFA181]/50 transition-all duration-300 hover:translate-y-[-2px]"
-                  >
-                    <span className="text-[#D4C5B0] text-sm">{skill}</span>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-[#F4F4F4] font-medium text-sm mb-2">Languages & Frameworks</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {[...skills.languages, ...skills.frontend, ...skills.backend].map((skill, index) => (
+                      <span 
+                        key={index}
+                        className="px-3 py-1.5 text-xs rounded-md bg-[#1F1F1F] border border-[#BFA181]/20 text-[#D4C5B0] hover:border-[#BFA181]/50 transition-all duration-300"
+                      >
+                        {skill}
+                      </span>
+                    ))}
                   </div>
-                ))}
+                </div>
+                
+                <div>
+                  <h3 className="text-[#F4F4F4] font-medium text-sm mb-2">Databases</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.databases.map((skill, index) => (
+                      <span 
+                        key={index}
+                        className="px-3 py-1.5 text-xs rounded-md bg-[#1F1F1F] border border-[#BFA181]/20 text-[#D4C5B0] hover:border-[#BFA181]/50 transition-all duration-300"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 className="text-[#F4F4F4] font-medium text-sm mb-2">DevOps & Tools</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {[...skills.devops, ...skills.tools].map((skill, index) => (
+                      <span 
+                        key={index}
+                        className="px-3 py-1.5 text-xs rounded-md bg-[#1F1F1F] border border-[#BFA181]/20 text-[#D4C5B0] hover:border-[#BFA181]/50 transition-all duration-300"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -391,7 +561,7 @@ export default function ResumeArchive() {
             <div className="mb-16 p-6 border border-[#BFA181]/20 rounded-lg bg-[#1F1F1F] text-center">
               <h2 className="text-2xl font-semibold text-[#F4F4F4] mb-3">Interested in working together?</h2>
               <p className="text-[#D4C5B0] text-sm mb-6 max-w-lg mx-auto">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
               </p>
               <Link 
                 href="/#contact" 
