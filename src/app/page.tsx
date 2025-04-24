@@ -277,8 +277,8 @@ export default function Home() {
               
               <div className="flex space-x-5 mt-auto">
                 {[
-                  { icon: Github, href: "https://github.com/yourusername" },
-                  { icon: Linkedin, href: "https://linkedin.com/in/yourusername" },
+                  { icon: Github, href: "https://github.com/Alphawga" },
+                  { icon: Linkedin, href: "https://linkedin.com/in/bamidele-ajibola-9b7913178" },
                   { icon: Mail, href: "mailto:Bamidele.ajibola.alpha@gmail.com" },
                 ].map((social, i) => (
                   <a
