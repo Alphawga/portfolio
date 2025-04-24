@@ -1,11 +1,23 @@
 import type React from "react"
 import "./globals.css"
-import { Inter } from "next/font/google"
+import { Source_Sans_3, Lora } from "next/font/google"
 import { ThemeProvider } from "../components/theme-provider"
 import SearchCommand from "../components/search-command"
 
 
-const inter = Inter({ subsets: ["latin"] })
+// Initialize Source Sans Pro for the body
+const sourceSans = Source_Sans_3({ 
+  subsets: ["latin"], 
+  display: 'swap',
+  variable: '--font-source-sans' // CSS variable for body font
+})
+
+// Initialize Lora for headings
+const lora = Lora({
+  subsets: ["latin"],
+  display: 'swap',
+  variable: '--font-lora' // CSS variable for heading font
+})
 
 export const metadata = {
   title: "Bamidele Ajibola - Full Stack Developer",
@@ -25,7 +37,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      {/* Apply both font variables to the body */}
+      <body className={`${sourceSans.variable} ${lora.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
           <SearchCommand />

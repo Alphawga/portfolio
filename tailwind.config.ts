@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss"
 import { shadcnPlugin } from "./src/lib/shadcn-plugin"
+import { fontFamily } from "tailwindcss/defaultTheme"
 
 const config = {
   darkMode: ["class"],
@@ -19,6 +20,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-source-sans)", ...fontFamily.sans],
+        serif: ["var(--font-lora)", ...fontFamily.serif],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
