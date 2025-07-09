@@ -63,17 +63,6 @@ export default function Home() {
   const projects = [
     {
       id: 1,
-      title: "Traders Bloc",
-      distress: "Financial institutions faced inefficiencies and security risks in traditional lending processes.",
-      process: "Developed a secure lending platform using Node.js and React. Implemented role-based access controls and integrated secure payment gateways, ensuring 100% data security compliance.",
-      delight: "Revolutionized financial transactions with a secure and efficient platform, streamlining the lending process.",
-      image: "/traders.png",
-      link: "https://traders-bloc-backend.vercel.app/",
-      tags: ["Node.js", "React", "Express", "Payment Integration", "RESTful API"],
-      accentColor: "accentBlue",
-    },
-    {
-      id: 2,
       title: "SchoolWave",
       distress: "Manual school management processes were time-consuming and prone to errors, hindering operational efficiency.",
       process: "Engineered an AI-powered school management system. Designed AI-driven result processing algorithms using Node.js and integrated analytics with MongoDB.",
@@ -84,7 +73,7 @@ export default function Home() {
       accentColor: "accentGreen",
     },
     {
-      id: 3,
+      id: 2,
       title: "TechHill LMS",
       distress: "Existing learning platforms lacked intuitive user experiences, hindering learner engagement.",
       process: "Built a modern Learning Management System using React.js and Next.js. Focused on delivering an intuitive frontend and optimizing database interactions for performance.",
@@ -95,7 +84,7 @@ export default function Home() {
       accentColor: "accentRed",
     },
     {
-      id: 4,
+      id: 3,
       title: "OKOH ERP System",
       distress: "The client required a streamlined system to manage complex enterprise resources efficiently.",
       process: "Developed a custom Enterprise Resource Planning (ERP) solution using .NET and React.js. Designed scalable backend logic with Node.js/Express.js and SQL.",
@@ -105,6 +94,19 @@ export default function Home() {
       tags: [".NET", "React.js", "SQL", "Node.js", "Express.js"],
       accentColor: "mutedGold",
     },
+    {
+      id: 4,
+      title: "Traders Bloc",
+      distress: "Financial institutions faced inefficiencies and security risks in traditional lending processes.",
+      process: "Developed a secure lending platform using Node.js and React. Implemented role-based access controls and integrated secure payment gateways, ensuring 100% data security compliance.",
+      delight: "Revolutionized financial transactions with a secure and efficient platform, streamlining the lending process.",
+      image: "/traders.png",
+      link: "https://traders-bloc-backend.vercel.app/",
+      tags: ["Node.js", "React", "Express", "Payment Integration", "RESTful API"],
+      accentColor: "accentBlue",
+    },
+    
+   
     
   ]
 
