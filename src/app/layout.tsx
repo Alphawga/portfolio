@@ -20,8 +20,8 @@ const lora = Lora({
 })
 
 export const metadata = {
-  title: "Bamidele Ajibola - Full Stack Developer",
-  description: "I help founders turn ideas into seamless digital experiences",
+  title: "Bamidele Ajibola - Full Stack & Mobile Developer",
+  description: "I help founders turn ideas into seamless digital experiences across web and mobile platforms",
   icons: {
     icon: [
       { url: '/icons/favicon.svg', type: 'image/svg+xml' },

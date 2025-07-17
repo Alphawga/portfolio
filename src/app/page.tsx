@@ -61,6 +61,17 @@ export default function Home() {
   }, [isMenuOpen, sectionRefs])
 
   const projects = [
+     {
+      id: 5,
+      title: "Diabetes Medication Reminder & Tracker",
+      distress: "Diabetic patients struggled with medication adherence and health monitoring, leading to poor health outcomes.",
+      process: "Developed a React Native mobile app with Python backend, enabling real-time tracking and notifications. Integrated AI model to offer personalized medication reminders and health tips.",
+      delight: "Designed a user-friendly interface that improved daily adherence and patient engagement, supporting better health management.",
+      image: "/diabetes-tracker.png",
+      link: "https://github.com/Alphawga/diabetes-tracker",
+      tags: ["React Native", "Python", "AI/ML", "Mobile Development", "Healthcare"],
+      accentColor: "accentGreen",
+    },
     {
       id: 1,
       title: "SchoolWave",
@@ -105,6 +116,7 @@ export default function Home() {
       tags: ["Node.js", "React", "Express", "Payment Integration", "RESTful API"],
       accentColor: "accentBlue",
     },
+   
     
    
     
@@ -113,11 +125,11 @@ export default function Home() {
   const experience = [
     {
       date: "2021 — Present",
-      title: "Full Stack Developer",
+      title: "Software Developer",
       company: "Innovar Ideas",
       link: "https://innovartech.ng/",
-      description: "Designed and scaled web applications using React.js and Next.js while building secure RESTful APIs and collaborating with international teams.",
-      tags: ["React.js", "Next.js", "Node.js", "RESTful APIs", "CI/CD"]
+      description: "Designed and scaled web applications using React.js, React Native and Next.js while building secure RESTful APIs and collaborating with international teams.",
+      tags: ["React.js", "React Native", "Next.js", "Node.js", "RESTful APIs", "CI/CD"]
     },
     {
       date: "2020 — 2021",
@@ -332,7 +344,7 @@ export default function Home() {
                   </p>
                   
                   <p>
-                    As a <span className="text-[#BFA181]">Full Stack Developer</span>, I focus on building end-to-end solutions that solve real-world problems. From conceptualizing ideas to delivering polished products, I excel at creating and maintaining the components that power modern web applications. My commitment extends to rigorous adherence to web accessibility standards and best practices, ensuring every user enjoys an inclusive and seamless experience.
+                    As a <span className="text-[#BFA181]">Full Stack Developer</span> and <span className="text-[#BFA181]">Mobile App Developer</span>, I focus on building end-to-end solutions that solve real-world problems. From conceptualizing ideas to delivering polished products, I excel at creating and maintaining the components that power modern web and mobile applications. My expertise spans React Native for cross-platform mobile development, enabling me to create seamless experiences across all devices while maintaining rigorous adherence to accessibility standards and best practices.
                   </p>
                   
                   <p>
