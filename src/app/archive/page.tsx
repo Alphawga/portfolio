@@ -10,11 +10,64 @@ import Link from "next/link"
 export default function ProjectArchive() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isClient, setIsClient] = useState(false)
 
-  // Define complete projects array
-  const projects = [
+  // Featured projects (from landing page)
+  const featuredProjects = [
     {
       id: 1,
+      title: "SchoolWave",
+      description: "Manual school management processes were time-consuming and prone to errors, hindering operational efficiency.",
+      process: "Engineered an AI-powered school management system. Designed AI-driven result processing algorithms using Node.js and integrated analytics with MongoDB.",
+      delight: "Transformed educational operations by reducing manual result processing workload by 70% and providing data-driven insights.",
+      image: "/schoolwave.png",
+      link: "https://schoolwave.ng/",
+      tags: ["AI/ML", "React", "Node.js", "Analytics", "MongoDB"],
+      accentColor: "accentGreen",
+      isFeatured: true
+    },
+    {
+      id: 2,
+      title: "TechHill LMS",
+      description: "Existing learning platforms lacked intuitive user experiences, hindering learner engagement.",
+      process: "Built a modern Learning Management System using React.js and Next.js. Focused on delivering an intuitive frontend and optimizing database interactions for performance.",
+      delight: "Enhanced educational experiences for 10,000+ learners through a significantly improved, user-friendly interface.",
+      image: "/techill.png",
+      link: "https://www.techill.ng/",
+      tags: ["React.js", "Next.js", "Database Optimization", "Analytics"],
+      accentColor: "accentRed",
+      isFeatured: true
+    },
+    {
+      id: 3,
+      title: "OKOH ERP System",
+      description: "The client required a streamlined system to manage complex enterprise resources efficiently.",
+      process: "Developed a custom Enterprise Resource Planning (ERP) solution using .NET and React.js. Designed scalable backend logic with Node.js/Express.js and SQL.",
+      delight: "Streamlined business operations by implementing a scalable backend, reducing processing delays by 20%.",
+      image: "/okoh.png",
+      link: "https://www.okohinternational.com/",
+      tags: [".NET", "React.js", "SQL", "Node.js", "Express.js"],
+      accentColor: "mutedGold",
+      isFeatured: true
+    },
+    {
+      id: 4,
+      title: "Traders Bloc",
+      description: "Financial institutions faced inefficiencies and security risks in traditional lending processes.",
+      process: "Developed a secure lending platform using Node.js and React. Implemented role-based access controls and integrated secure payment gateways, ensuring 100% data security compliance.",
+      delight: "Revolutionized financial transactions with a secure and efficient platform, streamlining the lending process.",
+      image: "/traders.png",
+      link: "https://traders-bloc-backend.vercel.app/",
+      tags: ["Node.js", "React", "Express", "Payment Integration", "RESTful API"],
+      accentColor: "accentBlue",
+      isFeatured: true
+    }
+  ]
+
+  // Additional projects
+  const additionalProjects = [
+    {
+      id: 101,
       title: "PrecisionGrammar",
       description: "Elevate Your Content. Achieve Excellence. Professional, Accurate, and Reliable Document Reviews.",
       image: "/placeholder.svg",
@@ -24,7 +77,7 @@ export default function ProjectArchive() {
       accentColor: "blue"
     },
     {
-      id: 2,
+      id: 102,
       title: "EasyMultiLingo",
       description: "Streamline your workflow, ensure accuracy, and collaborate seamlessly using our advanced review platform.",
       image: "/placeholder.svg",
@@ -34,7 +87,7 @@ export default function ProjectArchive() {
       accentColor: "green"
     },
     {
-      id: 3,
+      id: 103,
       title: "PrecisionKeywords",
       description: "Tailor-made SEO strategies to increase market potential and achieve competitive search rankings.",
       image: "/placeholder.svg",
@@ -44,17 +97,17 @@ export default function ProjectArchive() {
       accentColor: "amber"
     },
     {
-      id: 4,
+      id: 104,
       title: "EatCleanFit",
       description: "Fuel Your Body with Delicious, Healthy Meals that Prevent Disease and Promote Well-being.",
-      image: "/placeholder.svg", 
+      image: "/placeholder.svg",
       link: "https://eatcleanfit.com",
       tags: ["Nutrition", "Meal Planning", "Health", "Wellness"],
       details: "Explore our collection of tasty pasta options, carefully designed to simplify your meal planning, promote your well-being, and keep every bite satisfying. Our focus is on clean eating for optimal fitness and health outcomes.",
       accentColor: "red"
     },
     {
-      id: 5,
+      id: 105,
       title: "CopyImpactHub",
       description: "Transform Your Brand With Copy That Inspires Action and Drives Growth.",
       image: "/placeholder.svg",
@@ -64,7 +117,7 @@ export default function ProjectArchive() {
       accentColor: "purple"
     },
     {
-      id: 6,
+      id: 106,
       title: "FitNutritionGuide",
       description: "Complete nutrition services with fastest delivery and easy pickup options.",
       image: "/placeholder.svg",
@@ -74,7 +127,7 @@ export default function ProjectArchive() {
       accentColor: "teal"
     },
     {
-      id: 7,
+      id: 107,
       title: "DissertCoach",
       description: "Expert Document Review & Analysis Services for Academic Excellence.",
       image: "/placeholder.svg",
@@ -84,7 +137,7 @@ export default function ProjectArchive() {
       accentColor: "sky"
     },
     {
-      id: 8,
+      id: 108,
       title: "AIQuickTag",
       description: "Intelligent AI Tagging for Superior Content Management and Organization.",
       image: "/placeholder.svg",
@@ -94,7 +147,7 @@ export default function ProjectArchive() {
       accentColor: "green"
     },
     {
-      id: 9,
+      id: 109,
       title: "SnackToFit",
       description: "Healthy snack options designed for active lifestyles and fitness enthusiasts.",
       image: "/placeholder.svg",
@@ -104,7 +157,7 @@ export default function ProjectArchive() {
       accentColor: "violet"
     },
     {
-      id: 10,
+      id: 110,
       title: "BeatzPal",
       description: "Music collaboration platform for artists, producers, and audio professionals.",
       image: "/placeholder.svg",
@@ -153,6 +206,9 @@ export default function ProjectArchive() {
 
   // Mouse tracking effect
   useEffect(() => {
+    // Set client-side flag
+    setIsClient(true)
+
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.pageX, y: e.pageY })
     }
@@ -172,13 +228,16 @@ export default function ProjectArchive() {
     }
   }, [isMenuOpen])
 
+  // Combine all projects with featured first
+  const allProjects = [...featuredProjects, ...additionalProjects]
+
   // Group projects into pairs for desktop view
   const projectPairs = []
-  for (let i = 0; i < projects.length; i += 2) {
-    if (i + 1 < projects.length) {
-      projectPairs.push([projects[i], projects[i + 1]])
+  for (let i = 0; i < allProjects.length; i += 2) {
+    if (i + 1 < allProjects.length) {
+      projectPairs.push([allProjects[i], allProjects[i + 1]])
     } else {
-      projectPairs.push([projects[i]])
+      projectPairs.push([allProjects[i]])
     }
   }
 
@@ -284,68 +343,123 @@ export default function ProjectArchive() {
               </p>
             </div>
 
-            {/* Projects Grid */}
+            {/* Featured Projects Section */}
             <div className="mb-16">
               <h2 className="text-sm uppercase tracking-wider text-[#BFA181] mb-6 font-medium">Featured Projects</h2>
-              
+
               <div className="space-y-16">
-                {projectPairs.map((pair, pairIndex) => (
-                  <div 
-                    key={pairIndex} 
-                    className="grid grid-cols-1 md:grid-cols-2 gap-8"
+                {featuredProjects.map((project, index) => (
+                  <div
+                    key={project.id}
+                    className={`group p-6 rounded-lg transition-all duration-300 hover:bg-[#BFA181]/10 hover:shadow-xl hover:backdrop-blur-sm overflow-hidden ${index % 2 === 0 ? 'border-l-4 border-l-[#BFA181]' : 'border-r-4 border-r-[#BFA181]'}`}
                   >
-                    {pair.map((project) => (
-                      <div 
-                        key={project.id} 
-                        className="group relative flex flex-col border border-[#BFA181]/20 rounded-lg overflow-hidden hover:border-[#BFA181]/50 transition-all duration-300 bg-[#1F1F1F]"
-                      >
-                        <div className="relative h-48 overflow-hidden">
-                          <div className="absolute inset-0 bg-black/30 z-10"></div>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-start">
+                      <div className="sm:col-span-1">
+                        <div className="relative aspect-w-16 aspect-h-9 rounded-md overflow-hidden border border-[#BFA181]/20 shadow-md">
                           <Image
                             src={project.image}
                             alt={project.title}
                             fill
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            className="object-cover group-hover:scale-105 transition-transform duration-700"
+                            sizes="(max-width: 768px) 100vw, 33vw"
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
                           />
                         </div>
-                        
-                        <div className="flex-1 p-5">
-                          <h3 className="text-xl font-semibold text-[#F4F4F4] mb-2 group-hover:text-[#BFA181] transition-colors">
-                            {project.title}
-                          </h3>
-                          
-                          <p className="text-[#D4C5B0] text-sm mb-4">{project.description}</p>
-                          
-                          <div className="flex flex-wrap gap-1.5 mb-4">
-                            {project.tags.map((tag, i) => (
-                              <span 
-                                key={i} 
-                                className="px-2 py-0.5 text-[10px] rounded-full bg-[#252525] border border-[#BFA181]/30 text-[#D4C5B0]"
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                          
-                          <p className="text-[#D4C5B0]/80 text-xs mb-4">
-                            {project.details}
-                          </p>
-                          
-                          <div className="mt-auto pt-4">
-                            <Link 
-                              href={project.link} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center text-[#BFA181] hover:text-[#D4C5B0] text-sm font-medium transition-colors"
-                            >
-                              <span>View Project</span>
-                              <ArrowUpRight className="ml-1 h-4 w-4" />
+                      </div>
+                      <div className="sm:col-span-2">
+                        <div className="flex items-center gap-2 mb-3">
+                          <h3 className="text-xl font-semibold text-[#F4F4F4]">
+                            <Link href={project.link || '#'} target="_blank" rel="noopener noreferrer" className="hover:text-[#BFA181] transition-colors">
+                              {project.title}
+                              <ArrowUpRight className="inline-block h-4 w-4 ml-1.5 text-[#BFA181] transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
                             </Link>
+                          </h3>
+                          <span className="px-2 py-1 text-xs bg-[#BFA181] text-[#1C1C1C] rounded-full font-medium">Featured</span>
+                        </div>
+
+                        <div className="space-y-4 text-sm text-[#D4C5B0]">
+                          <div>
+                            <h4 className="font-semibold text-[#BFA181]/90 text-xs uppercase tracking-wider mb-1">The Challenge</h4>
+                            <p className="leading-relaxed">{project.description}</p>
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-[#BFA181]/90 text-xs uppercase tracking-wider mb-1">The Solution</h4>
+                            <p className="leading-relaxed">{project.process}</p>
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-[#BFA181]/90 text-xs uppercase tracking-wider mb-1">The Impact</h4>
+                            <p className="leading-relaxed">{project.delight}</p>
                           </div>
                         </div>
+
+                        <div className="flex flex-wrap gap-1.5 mt-4">
+                          {project.tags.map((tag, i) => (
+                            <span key={i} className="px-2 py-0.5 text-[10px] rounded-full bg-[#1C1C1C]/70 border border-[#BFA181]/30 text-[#D4C5B0]">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Additional Projects Grid */}
+            <div className="mb-16">
+              <h2 className="text-sm uppercase tracking-wider text-[#BFA181] mb-6 font-medium">Additional Projects</h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {additionalProjects.map((project) => (
+                  <div
+                    key={project.id}
+                    className="group relative flex flex-col border border-[#BFA181]/20 rounded-lg overflow-hidden hover:border-[#BFA181]/50 transition-all duration-300 bg-[#1F1F1F]"
+                  >
+                    <div className="relative h-48 overflow-hidden">
+                      <div className="absolute inset-0 bg-black/30 z-10"></div>
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                    </div>
+
+                    <div className="flex-1 p-5">
+                      <h3 className="text-xl font-semibold text-[#F4F4F4] mb-2 group-hover:text-[#BFA181] transition-colors">
+                        {project.title}
+                      </h3>
+
+                      <p className="text-[#D4C5B0] text-sm mb-4">{project.description}</p>
+
+                      <div className="flex flex-wrap gap-1.5 mb-4">
+                        {project.tags.map((tag, i) => (
+                          <span
+                            key={i}
+                            className="px-2 py-0.5 text-[10px] rounded-full bg-[#252525] border border-[#BFA181]/30 text-[#D4C5B0]"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      <p className="text-[#D4C5B0]/80 text-xs mb-4">
+                        {project.details}
+                      </p>
+
+                      <div className="mt-auto pt-4">
+                        <Link
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-[#BFA181] hover:text-[#D4C5B0] text-sm font-medium transition-colors"
+                        >
+                          <span>View Project</span>
+                          <ArrowUpRight className="ml-1 h-4 w-4" />
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -409,7 +523,7 @@ export default function ProjectArchive() {
                   Built with Next.js and Tailwind CSS
                 </div>
                 <div className="text-[#BFA181] text-xs">
-                  © 2023 Ajibola Bamidele Agim
+                  © 2024 Ajibola Bamidele Agim
                 </div>
               </div>
             </footer>

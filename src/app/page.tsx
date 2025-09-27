@@ -11,16 +11,21 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("about")
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [isClient, setIsClient] = useState(false)
 
   const sectionRefs = {
     about: useRef<HTMLElement>(null),
     experience: useRef<HTMLElement>(null),
+    software: useRef<HTMLElement>(null),
+    ecommerce: useRef<HTMLElement>(null),
     projects: useRef<HTMLElement>(null),
     contact: useRef<HTMLElement>(null),
-    
   }
 
   useEffect(() => {
+    // Set client-side flag
+    setIsClient(true)
+
     const handleScroll = () => {
       const sections = Object.entries(sectionRefs)
       const scrollPosition = window.scrollY + window.innerHeight * 0.4
@@ -61,17 +66,6 @@ export default function Home() {
   }, [isMenuOpen, sectionRefs])
 
   const projects = [
-     {
-      id: 5,
-      title: "Diabetes Medication Reminder & Tracker",
-      distress: "Diabetic patients struggled with medication adherence and health monitoring, leading to poor health outcomes.",
-      process: "Developed a React Native mobile app with Python backend, enabling real-time tracking and notifications. Integrated AI model to offer personalized medication reminders and health tips.",
-      delight: "Designed a user-friendly interface that improved daily adherence and patient engagement, supporting better health management.",
-      image: "/diabetes-tracker.png",
-      link: "https://github.com/Alphawga/diabetes-tracker",
-      tags: ["React Native", "Python", "AI/ML", "Mobile Development", "Healthcare"],
-      accentColor: "accentGreen",
-    },
     {
       id: 1,
       title: "SchoolWave",
@@ -128,8 +122,8 @@ export default function Home() {
       title: "Software Developer",
       company: "Innovar Ideas",
       link: "https://innovartech.ng/",
-      description: "Designed and scaled web applications using React.js, React Native and Next.js while building secure RESTful APIs and collaborating with international teams.",
-      tags: ["React.js", "React Native", "Next.js", "Node.js", "RESTful APIs", "CI/CD"]
+      description: "Designed and scaled web applications using React.js and Next.js while building secure RESTful APIs and collaborating with international teams.",
+      tags: ["React.js", "Next.js", "Node.js", "RESTful APIs", "CI/CD"]
     },
     {
       date: "2020 — 2021",
@@ -159,12 +153,14 @@ export default function Home() {
 
   return (
     <div className="bg-[#1C1C1C] text-[#F4F4F4] min-h-screen relative group/spotlight">
-      <motion.div
-        className="pointer-events-none absolute inset-0 z-30 transition duration-300"
-        style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(191, 161, 129, 0.08), transparent 80%)`,
-        }}
-      />
+      {isClient && (
+        <motion.div
+          className="pointer-events-none absolute inset-0 z-30 transition duration-300"
+          style={{
+            background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(191, 161, 129, 0.08), transparent 80%)`,
+          }}
+        />
+      )}
       <div className="max-w-screen-xl mx-auto">
         <header className="sticky top-0 z-30 md:hidden bg-[#1C1C1C]/90 backdrop-blur-md p-4 border-b border-[#BFA181]/10">
           <div className="flex justify-between items-center">
@@ -218,6 +214,8 @@ export default function Home() {
                 {[
                   { id: "about", label: "About" },
                   { id: "experience", label: "Experience" },
+                  { id: "software", label: "Software Solutions" },
+                  { id: "ecommerce", label: "E-commerce Services" },
                   { id: "projects", label: "Projects" },
                   { id: "contact", label: "Contact" },
                 ].map((item) => (
@@ -259,12 +257,25 @@ export default function Home() {
                 <p className="text-[#D4C5B0] mt-4 text-sm md:text-base max-w-xs">
                   I build accessible, pixel-perfect digital experiences for the web.
                 </p>
+
+                <div className="mt-6 max-w-xs">
+                  <Link
+                    href="#contact"
+                    className="inline-flex items-center bg-[#BFA181] text-[#1C1C1C] px-5 py-2.5 rounded-md hover:bg-[#AD8D6F] transition-colors text-sm font-medium"
+                  >
+                    Hire Me
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                  <p className="text-[#D4C5B0]/80 text-xs mt-2">Available for projects & full-time roles</p>
+                </div>
               </div>
               
               <nav className="hidden md:flex flex-col space-y-3 mb-8">
                 {[
                   { id: "about", label: "About" },
                   { id: "experience", label: "Experience" },
+                  { id: "software", label: "Software Solutions" },
+                  { id: "ecommerce", label: "E-commerce Services" },
                   { id: "projects", label: "Projects" },
                   { id: "contact", label: "Contact" },
                 ].map((item) => (
@@ -276,14 +287,16 @@ export default function Home() {
                         : "text-[#D4C5B0] hover:text-[#F4F4F4]"
                       }`}
                   >
-                    <motion.div
-                      className="h-0.5 bg-[#BFA181] absolute left-[-20px] md:left-[-32px]"
-                          initial={{ width: 0 }}
-                      animate={{
-                        width: activeSection === item.id ? 16 : 0,
-                      }}
-                      transition={{ duration: 0.3 }}
-                        />
+                    {isClient && (
+                      <motion.div
+                        className="h-0.5 bg-[#BFA181] absolute left-[-20px] md:left-[-32px]"
+                        initial={{ width: 0 }}
+                        animate={{
+                          width: activeSection === item.id ? 16 : 0,
+                        }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    )}
                     <span>{item.label}</span>
                       </Link>
                 ))}
@@ -344,7 +357,7 @@ export default function Home() {
                   </p>
                   
                   <p>
-                    As a <span className="text-[#BFA181]">Full Stack Developer</span> and <span className="text-[#BFA181]">Mobile App Developer</span>, I focus on building end-to-end solutions that solve real-world problems. From conceptualizing ideas to delivering polished products, I excel at creating and maintaining the components that power modern web and mobile applications. My expertise spans React Native for cross-platform mobile development, enabling me to create seamless experiences across all devices while maintaining rigorous adherence to accessibility standards and best practices.
+                    As a <span className="text-[#BFA181]">Full Stack Developer</span>, I focus on building end-to-end solutions that solve real-world problems. From conceptualizing ideas to delivering polished products, I excel at creating and maintaining the components that power modern web applications. I specialize in developing custom software solutions and e-commerce platforms, enabling businesses to scale efficiently while maintaining rigorous adherence to accessibility standards and best practices.
                   </p>
                   
                   <p>
@@ -394,7 +407,119 @@ export default function Home() {
                   </Link>
                 </div>
               </section>
-              
+
+              <section id="software" ref={sectionRefs.software} className="mb-16 md:mb-24 scroll-mt-20 md:scroll-mt-24">
+                <h3 className="text-sm uppercase tracking-wider text-[#BFA181] mb-4 font-medium">Software Solutions</h3>
+                <div className="max-w-xl space-y-8">
+                  <p className="text-[#D4C5B0] text-sm md:text-base">
+                    I specialize in building custom software solutions that transform business operations and drive growth. From concept to deployment, I deliver scalable, secure, and user-friendly applications tailored to your specific needs.
+                  </p>
+
+                  <div className="grid gap-6">
+                    <div className="p-5 rounded-lg bg-[#BFA181]/10 border border-[#BFA181]/20 hover:bg-[#BFA181]/15 transition-all duration-300">
+                      <h4 className="text-[#F4F4F4] font-semibold mb-2">Custom Web Applications</h4>
+                      <p className="text-[#D4C5B0] text-sm">Full-stack web applications built with React, Next.js, and Node.js. Scalable architecture with secure authentication and real-time features.</p>
+                    </div>
+
+                    <div className="p-5 rounded-lg bg-[#BFA181]/10 border border-[#BFA181]/20 hover:bg-[#BFA181]/15 transition-all duration-300">
+                      <h4 className="text-[#F4F4F4] font-semibold mb-2">Business Process Automation</h4>
+                      <p className="text-[#D4C5B0] text-sm">Streamline operations with automated workflows, data processing, and integration systems that reduce manual work and improve efficiency.</p>
+                    </div>
+
+                    <div className="p-5 rounded-lg bg-[#BFA181]/10 border border-[#BFA181]/20 hover:bg-[#BFA181]/15 transition-all duration-300">
+                      <h4 className="text-[#F4F4F4] font-semibold mb-2">API Development & Integration</h4>
+                      <p className="text-[#D4C5B0] text-sm">RESTful APIs, third-party integrations, and microservices architecture to connect your systems and extend functionality.</p>
+                    </div>
+
+                    <div className="p-5 rounded-lg bg-[#BFA181]/10 border border-[#BFA181]/20 hover:bg-[#BFA181]/15 transition-all duration-300">
+                      <h4 className="text-[#F4F4F4] font-semibold mb-2">Legacy System Modernization</h4>
+                      <p className="text-[#D4C5B0] text-sm">Transform outdated systems with modern technologies while preserving critical data and ensuring seamless migration.</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-[#1C1C1C]/80 backdrop-blur-md rounded-lg p-6 border border-[#BFA181]/20 shadow-lg">
+                    <p className="text-[#BFA181] font-medium mb-3">Ready to transform your business with custom software?</p>
+                    <Link
+                      href="#contact"
+                      className="inline-flex items-center bg-[#BFA181] text-[#1C1C1C] px-6 py-3 rounded-md hover:bg-[#AD8D6F] transition-colors text-sm font-medium"
+                    >
+                      Let's Discuss Your Project
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </div>
+                </div>
+              </section>
+
+              <section id="ecommerce" ref={sectionRefs.ecommerce} className="mb-16 md:mb-24 scroll-mt-20 md:scroll-mt-24">
+                <h3 className="text-sm uppercase tracking-wider text-[#BFA181] mb-4 font-medium">E-commerce Services</h3>
+                <div className="max-w-xl space-y-8">
+                  <div className="bg-gradient-to-r from-[#BFA181]/20 to-[#AD8D6F]/20 p-6 rounded-lg border border-[#BFA181]/30">
+                    <h4 className="text-xl font-bold text-[#F4F4F4] mb-2">Complete E-commerce Solutions in 40 Days</h4>
+                    <p className="text-[#D4C5B0] text-sm md:text-base">
+                      Get your business online with a fully functional e-commerce platform. From design to deployment, I deliver comprehensive solutions that drive sales and growth.
+                    </p>
+                  </div>
+
+                  <div className="grid gap-4">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 rounded-full bg-[#BFA181] mt-2"></div>
+                      <div>
+                        <h5 className="text-[#F4F4F4] font-medium text-sm">Custom Design & Development</h5>
+                        <p className="text-[#D4C5B0] text-sm">Responsive, mobile-optimized stores built with modern technologies</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 rounded-full bg-[#BFA181] mt-2"></div>
+                      <div>
+                        <h5 className="text-[#F4F4F4] font-medium text-sm">Payment Gateway Integration</h5>
+                        <p className="text-[#D4C5B0] text-sm">Secure payment processing with multiple payment options</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 rounded-full bg-[#BFA181] mt-2"></div>
+                      <div>
+                        <h5 className="text-[#F4F4F4] font-medium text-sm">Inventory Management System</h5>
+                        <p className="text-[#D4C5B0] text-sm">Complete product catalog and stock management</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 rounded-full bg-[#BFA181] mt-2"></div>
+                      <div>
+                        <h5 className="text-[#F4F4F4] font-medium text-sm">Admin Dashboard</h5>
+                        <p className="text-[#D4C5B0] text-sm">Easy-to-use backend for managing orders, customers, and analytics</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 rounded-full bg-[#BFA181] mt-2"></div>
+                      <div>
+                        <h5 className="text-[#F4F4F4] font-medium text-sm">SEO Optimization</h5>
+                        <p className="text-[#D4C5B0] text-sm">Built-in SEO features to help your store rank higher</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-[#1C1C1C]/80 backdrop-blur-md rounded-lg p-6 border border-[#BFA181]/20 shadow-lg">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                      <div>
+                        <p className="text-[#BFA181] font-medium mb-1">Ready to launch your online store?</p>
+                        <p className="text-[#D4C5B0] text-sm">Get a complete e-commerce solution delivered in 40 days</p>
+                      </div>
+                      <Link
+                        href="#contact"
+                        className="inline-flex items-center bg-[#BFA181] text-[#1C1C1C] px-6 py-3 rounded-md hover:bg-[#AD8D6F] transition-colors text-sm font-medium whitespace-nowrap"
+                      >
+                        Start Your Store
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
               <section id="projects" ref={sectionRefs.projects} className="mb-16 md:mb-24 scroll-mt-20 md:scroll-mt-24">
                 <h3 className="text-sm uppercase tracking-wider text-[#BFA181] mb-4 font-medium">Projects</h3>
                 <div className="max-w-xl space-y-12">
@@ -460,15 +585,131 @@ export default function Home() {
         </div>
       </section>
 
+              <section className="mb-16 md:mb-24 scroll-mt-20 md:scroll-mt-24">
+                <h3 className="text-sm uppercase tracking-wider text-[#BFA181] mb-4 font-medium">Client Success Stories</h3>
+                <div className="max-w-xl space-y-6">
+                  <div className="bg-[#BFA181]/10 p-6 rounded-lg border border-[#BFA181]/20">
+                    <p className="text-[#D4C5B0] text-sm italic mb-4">
+                      "Ajibola transformed our manual school management processes with an AI-powered system that reduced our result processing workload by 70%. The impact on our operational efficiency has been remarkable."
+                    </p>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-[#BFA181]/20 rounded-full flex items-center justify-center">
+                        <span className="text-[#BFA181] font-semibold text-sm">SW</span>
+                      </div>
+                      <div>
+                        <p className="text-[#F4F4F4] font-medium text-sm">SchoolWave Team</p>
+                        <p className="text-[#D4C5B0] text-xs">Education Technology</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-[#BFA181]/10 p-6 rounded-lg border border-[#BFA181]/20">
+                    <p className="text-[#D4C5B0] text-sm italic mb-4">
+                      "The secure lending platform Ajibola developed revolutionized our financial operations. The implementation of role-based access controls and payment gateway integration exceeded our expectations."
+                    </p>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-[#BFA181]/20 rounded-full flex items-center justify-center">
+                        <span className="text-[#BFA181] font-semibold text-sm">TB</span>
+                      </div>
+                      <div>
+                        <p className="text-[#F4F4F4] font-medium text-sm">Traders Bloc</p>
+                        <p className="text-[#D4C5B0] text-xs">Financial Services</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-[#BFA181]/10 p-6 rounded-lg border border-[#BFA181]/20">
+                    <p className="text-[#D4C5B0] text-sm italic mb-4">
+                      "Working with Ajibola on our ERP system was seamless. The scalable backend solution reduced our processing delays by 20% and improved our overall business operations significantly."
+                    </p>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-[#BFA181]/20 rounded-full flex items-center justify-center">
+                        <span className="text-[#BFA181] font-semibold text-sm">OK</span>
+                      </div>
+                      <div>
+                        <p className="text-[#F4F4F4] font-medium text-sm">OKOH International</p>
+                        <p className="text-[#D4C5B0] text-xs">Enterprise Solutions</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
               <section id="contact" ref={sectionRefs.contact} className="mb-16 md:mb-24 scroll-mt-20 md:scroll-mt-24">
-                <h3 className="text-sm uppercase tracking-wider text-[#BFA181] mb-4 font-medium">Contact</h3>
-                <div className="max-w-xl">
-                  <p className="mb-4 text-[#D4C5B0] text-sm">
-                    I&apos;m currently looking for new opportunities. Whether you have a question or just want to say hi, I&apos;ll do my best to get back to you!
-                  </p>
-                  
+                <h3 className="text-sm uppercase tracking-wider text-[#BFA181] mb-4 font-medium">Let's Work Together</h3>
+                <div className="max-w-xl space-y-8">
+
+                  <div className="bg-gradient-to-r from-[#BFA181]/20 to-[#AD8D6F]/20 p-6 rounded-lg border border-[#BFA181]/30">
+                    <h4 className="text-xl font-bold text-[#F4F4F4] mb-3">Ready to Transform Your Business?</h4>
+                    <p className="text-[#D4C5B0] text-sm md:text-base mb-4">
+                      I'm available for full-time positions, contract work, and project-based engagements. Let's discuss how I can help you achieve your business goals.
+                    </p>
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 rounded-full bg-[#BFA181]"></div>
+                        <span className="text-[#D4C5B0] text-sm">Full-time opportunities</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 rounded-full bg-[#BFA181]"></div>
+                        <span className="text-[#D4C5B0] text-sm">Contract projects</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 rounded-full bg-[#BFA181]"></div>
+                        <span className="text-[#D4C5B0] text-sm">E-commerce development</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 rounded-full bg-[#BFA181]"></div>
+                        <span className="text-[#D4C5B0] text-sm">Custom software solutions</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="bg-[#1C1C1C]/80 backdrop-blur-md rounded-lg p-5 border border-[#BFA181]/20 hover:border-[#BFA181]/40 transition-all duration-300">
+                      <h5 className="text-[#BFA181] font-semibold mb-2 text-sm">Quick Response</h5>
+                      <p className="text-[#D4C5B0] text-xs">I typically respond to inquiries within 24 hours</p>
+                    </div>
+                    <div className="bg-[#1C1C1C]/80 backdrop-blur-md rounded-lg p-5 border border-[#BFA181]/20 hover:border-[#BFA181]/40 transition-all duration-300">
+                      <h5 className="text-[#BFA181] font-semibold mb-2 text-sm">Free Consultation</h5>
+                      <p className="text-[#D4C5B0] text-xs">30-minute strategy call to discuss your project</p>
+                    </div>
+                  </div>
+
                   <div className="bg-[#1C1C1C]/80 backdrop-blur-md rounded-lg p-5 border border-[#BFA181]/20 shadow-lg">
                     <ContactForm />
+                  </div>
+
+                  <div className="text-center">
+                    <p className="text-[#D4C5B0] text-sm mb-4">
+                      Prefer a direct conversation? Let's connect on your preferred platform:
+                    </p>
+                    <div className="flex justify-center space-x-6">
+                      <a
+                        href="mailto:Bamidele.ajibola.alpha@gmail.com"
+                        className="flex items-center space-x-2 text-[#BFA181] hover:text-[#F4F4F4] transition-colors"
+                      >
+                        <Mail size={16} />
+                        <span className="text-sm">Email</span>
+                      </a>
+                      <a
+                        href="https://linkedin.com/in/bamidele-ajibola-9b7913178"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center space-x-2 text-[#BFA181] hover:text-[#F4F4F4] transition-colors"
+                      >
+                        <Linkedin size={16} />
+                        <span className="text-sm">LinkedIn</span>
+                      </a>
+                      <a
+                        href="https://github.com/Alphawga"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center space-x-2 text-[#BFA181] hover:text-[#F4F4F4] transition-colors"
+                      >
+                        <Github size={16} />
+                        <span className="text-sm">GitHub</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -480,7 +721,7 @@ export default function Home() {
                       Built with Next.js and Tailwind CSS
             </div>
                     <div className="text-[#BFA181] text-xs">
-                      © 2023 Ajibola Bamidele Agim
+                      © 2024 Ajibola Bamidele Agim
               </div>
             </div>
           </div>
