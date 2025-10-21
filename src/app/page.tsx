@@ -69,51 +69,67 @@ export default function Home() {
     {
       id: 1,
       title: "SchoolWave",
+      role: "Lead Full-Stack Developer",
+      timeline: "6 months",
+      impact: "70% workload reduction",
       distress: "Manual school management processes were time-consuming and prone to errors, hindering operational efficiency.",
       process: "Engineered an AI-powered school management system. Designed AI-driven result processing algorithms using Node.js and integrated analytics with MongoDB.",
       delight: "Transformed educational operations by reducing manual result processing workload by 70% and providing data-driven insights.",
       image: "/schoolwave.png",
       link: "https://schoolwave.ng/",
       tags: ["AI/ML", "React", "Node.js", "Analytics", "MongoDB"],
+      category: "AI Automation",
       accentColor: "accentGreen",
     },
     {
       id: 2,
       title: "TechHill LMS",
+      role: "Full-Stack Developer",
+      timeline: "4 months",
+      impact: "10,000+ active learners",
       distress: "Existing learning platforms lacked intuitive user experiences, hindering learner engagement.",
       process: "Built a modern Learning Management System using React.js and Next.js. Focused on delivering an intuitive frontend and optimizing database interactions for performance.",
       delight: "Enhanced educational experiences for 10,000+ learners through a significantly improved, user-friendly interface.",
       image: "/techill.png",
       link: "https://www.techill.ng/",
       tags: ["React.js", "Next.js", "Database Optimization", "Analytics"],
+      category: "Education Tech",
       accentColor: "accentRed",
     },
     {
       id: 3,
       title: "OKOH ERP System",
+      role: "Full-Stack Architect",
+      timeline: "8 months",
+      impact: "20% faster processing",
       distress: "The client required a streamlined system to manage complex enterprise resources efficiently.",
       process: "Developed a custom Enterprise Resource Planning (ERP) solution using .NET and React.js. Designed scalable backend logic with Node.js/Express.js and SQL.",
       delight: "Streamlined business operations by implementing a scalable backend, reducing processing delays by 20%.",
       image: "/okoh.png",
       link: "https://www.okohinternational.com/",
       tags: [".NET", "React.js", "SQL", "Node.js", "Express.js"],
+      category: "Enterprise Software",
       accentColor: "mutedGold",
     },
     {
       id: 4,
       title: "Traders Bloc",
+      role: "Backend Lead & Security Engineer",
+      timeline: "5 months",
+      impact: "100% security compliance",
       distress: "Financial institutions faced inefficiencies and security risks in traditional lending processes.",
       process: "Developed a secure lending platform using Node.js and React. Implemented role-based access controls and integrated secure payment gateways, ensuring 100% data security compliance.",
       delight: "Revolutionized financial transactions with a secure and efficient platform, streamlining the lending process.",
       image: "/traders.png",
       link: "https://traders-bloc-backend.vercel.app/",
       tags: ["Node.js", "React", "Express", "Payment Integration", "RESTful API"],
+      category: "FinTech",
       accentColor: "accentBlue",
     },
-   
-    
-   
-    
+
+
+
+
   ]
 
   const experience = [
@@ -251,19 +267,29 @@ export default function Home() {
                 </h1>
                 
                 <h2 className="text-lg font-medium text-[#BFA181] mt-2">
-                  Full Stack Developer
+                  Software Developer
                 </h2>
-                
+
                 <p className="text-[#D4C5B0] mt-4 text-sm md:text-base max-w-xs">
-                  I build accessible, pixel-perfect digital experiences for the web.
+                  I help businesses scale with custom software, e-commerce platforms, and AI automation that drive measurable growth.
                 </p>
+
+                <div className="mt-4 max-w-xs">
+                  <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-[#D4C5B0]/90 mb-4">
+                    <span>8+ Years Experience</span>
+                    <span className="text-[#BFA181]">•</span>
+                    <span>50+ Projects Delivered</span>
+                    <span className="text-[#BFA181]">•</span>
+                    <span>40-Day E-commerce Guarantee</span>
+                  </div>
+                </div>
 
                 <div className="mt-6 max-w-xs">
                   <Link
                     href="#contact"
                     className="inline-flex items-center bg-[#BFA181] text-[#1C1C1C] px-5 py-2.5 rounded-md hover:bg-[#AD8D6F] transition-colors text-sm font-medium"
                   >
-                    Hire Me
+                    Start Your Project
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                   <p className="text-[#D4C5B0]/80 text-xs mt-2">Available for projects & full-time roles</p>
@@ -353,18 +379,89 @@ export default function Home() {
                 <h3 className="text-sm uppercase tracking-wider text-[#BFA181] mb-4 font-medium">About</h3>
                 <div className="max-w-xl space-y-4 text-sm md:text-base text-[#D4C5B0]">
                   <p>
-                    Driven by a passion for transforming initial distress into user delight, I specialize in crafting accessible, pixel-perfect digital experiences. My expertise lies in translating complex problems into elegant full-stack applications and intuitive user interfaces, ensuring both aesthetic appeal and robust, high-performance engineering.
+                    I transform business challenges into scalable software solutions. With 8+ years building custom applications, e-commerce platforms, and AI-driven systems, I help companies reduce operational costs by up to 70% while increasing efficiency and revenue. My clients see real results: streamlined operations, automated workflows, and platforms that serve 100,000+ users.
                   </p>
-                  
+
                   <p>
-                    As a <span className="text-[#BFA181]">Full Stack Developer</span>, I focus on building end-to-end solutions that solve real-world problems. From conceptualizing ideas to delivering polished products, I excel at creating and maintaining the components that power modern web applications. I specialize in developing custom software solutions and e-commerce platforms, enabling businesses to scale efficiently while maintaining rigorous adherence to accessibility standards and best practices.
+                    My process starts with understanding your business goals—not just writing code. Whether you need a complete <span className="text-[#BFA181]">e-commerce platform in 40 days</span>, an <span className="text-[#BFA181]">AI automation system</span>, or <span className="text-[#BFA181]">custom enterprise software</span>, I deliver solutions that your team can actually use and your customers will love. From concept to deployment, I handle the full development lifecycle with clean, maintainable code and pixel-perfect interfaces.
                   </p>
-                  
+
                   <p>
-                    Throughout my career, I've honed my skills in diverse environments—from dynamic <span className="text-[#BFA181]">start-ups</span> and <span className="text-[#BFA181]">digital product studios</span> to established <span className="text-[#BFA181]">advertising agencies</span> and <span className="text-[#BFA181]">large corporations</span>—consistently turning innovative ideas into tangible, impactful products.
+                    From fast-growing startups to established enterprises, I've shipped 50+ production applications across education, finance, logistics, and e-commerce sectors. I've worked with dynamic <span className="text-[#BFA181]">tech startups</span>, <span className="text-[#BFA181]">digital product studios</span>, and <span className="text-[#BFA181]">large corporations</span>—consistently delivering solutions that scale and drive measurable business impact.
                   </p>
         </div>
       </section>
+
+              <section className="mb-16 md:mb-24 scroll-mt-20 md:scroll-mt-24">
+                <h3 className="text-sm uppercase tracking-wider text-[#BFA181] mb-4 font-medium">What I Do</h3>
+                <div className="max-w-xl">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a href="#ecommerce" className="group p-5 rounded-lg bg-[#BFA181]/10 border border-[#BFA181]/20 hover:bg-[#BFA181]/15 transition-all duration-300 cursor-pointer">
+                      <div className="flex items-start space-x-3">
+                        <div className="w-10 h-10 rounded-md bg-[#BFA181]/20 flex items-center justify-center flex-shrink-0">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#BFA181]">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                          </svg>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-[#F4F4F4] font-semibold mb-1 text-sm group-hover:text-[#BFA181] transition-colors">E-commerce Development</h4>
+                          <p className="text-[#D4C5B0] text-xs leading-relaxed">Launch revenue-generating online stores in 40 days</p>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a href="#software" className="group p-5 rounded-lg bg-[#BFA181]/10 border border-[#BFA181]/20 hover:bg-[#BFA181]/15 transition-all duration-300 cursor-pointer">
+                      <div className="flex items-start space-x-3">
+                        <div className="w-10 h-10 rounded-md bg-[#BFA181]/20 flex items-center justify-center flex-shrink-0">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#BFA181]">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                          </svg>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-[#F4F4F4] font-semibold mb-1 text-sm group-hover:text-[#BFA181] transition-colors">Custom Software Solutions</h4>
+                          <p className="text-[#D4C5B0] text-xs leading-relaxed">Build scalable applications tailored to your business</p>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a href="#software" className="group p-5 rounded-lg bg-[#BFA181]/10 border border-[#BFA181]/20 hover:bg-[#BFA181]/15 transition-all duration-300 cursor-pointer">
+                      <div className="flex items-start space-x-3">
+                        <div className="w-10 h-10 rounded-md bg-[#BFA181]/20 flex items-center justify-center flex-shrink-0">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#BFA181]">
+                            <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"></path>
+                          </svg>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-[#F4F4F4] font-semibold mb-1 text-sm group-hover:text-[#BFA181] transition-colors">AI & Automation</h4>
+                          <p className="text-[#D4C5B0] text-xs leading-relaxed">Eliminate repetitive tasks and unlock data-driven insights</p>
+                        </div>
+                      </div>
+                    </a>
+
+                    <a href="#software" className="group p-5 rounded-lg bg-[#BFA181]/10 border border-[#BFA181]/20 hover:bg-[#BFA181]/15 transition-all duration-300 cursor-pointer">
+                      <div className="flex items-start space-x-3">
+                        <div className="w-10 h-10 rounded-md bg-[#BFA181]/20 flex items-center justify-center flex-shrink-0">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#BFA181]">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
+                            <polyline points="7.5 19.79 7.5 14.6 3 12"></polyline>
+                            <polyline points="21 12 16.5 14.6 16.5 19.79"></polyline>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                          </svg>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-[#F4F4F4] font-semibold mb-1 text-sm group-hover:text-[#BFA181] transition-colors">System Modernization</h4>
+                          <p className="text-[#D4C5B0] text-xs leading-relaxed">Transform legacy systems without disrupting operations</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </section>
 
               <section id="experience" ref={sectionRefs.experience} className="mb-16 md:mb-24 scroll-mt-20 md:scroll-mt-24">
                 <h3 className="text-sm uppercase tracking-wider text-[#BFA181] mb-4 font-medium">Experience</h3>
@@ -524,10 +621,21 @@ export default function Home() {
                 <h3 className="text-sm uppercase tracking-wider text-[#BFA181] mb-4 font-medium">Projects</h3>
                 <div className="max-w-xl space-y-12">
                   {projects.slice(0, 5).map((project) => (
-                    <div 
+                    <div
                       key={project.id}
                       className="group p-4 rounded-lg transition-all duration-300 hover:bg-[#BFA181]/10 hover:shadow-xl hover:backdrop-blur-sm overflow-hidden"
                     >
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        <span className="px-2 py-1 text-[10px] rounded-md bg-[#BFA181]/20 border border-[#BFA181]/40 text-[#BFA181] font-medium uppercase tracking-wider">
+                          {project.category}
+                        </span>
+                        <span className="px-2 py-1 text-[10px] rounded-md bg-[#1C1C1C]/80 border border-[#BFA181]/20 text-[#D4C5B0]">
+                          {project.timeline}
+                        </span>
+                        <span className="px-2 py-1 text-[10px] rounded-md bg-[#1C1C1C]/80 border border-[#BFA181]/20 text-[#BFA181] font-semibold">
+                          {project.impact}
+                        </span>
+                      </div>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 items-start mb-4">
                         <div className="sm:col-span-1">
                           <div className="relative aspect-w-16 aspect-h-9 rounded-md overflow-hidden border border-[#BFA181]/20 shadow-md">
@@ -540,12 +648,13 @@ export default function Home() {
                           </div>
                         </div>
                         <div className="sm:col-span-2">
-                          <h3 className="flex items-center text-base font-semibold text-[#F4F4F4] mb-2">
+                          <h3 className="flex items-center text-base font-semibold text-[#F4F4F4] mb-1">
                             <Link href={project.link || '#'} target="_blank" rel="noopener noreferrer" className="hover:text-[#BFA181] transition-colors">
                               <span>{project.title}</span>
                               <ArrowUpRight className="inline-block h-4 w-4 ml-1.5 text-[#BFA181] transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
                             </Link>
                           </h3>
+                          <p className="text-[10px] text-[#D4C5B0]/80 mb-3 italic">{project.role}</p>
                           <div className="space-y-3 text-sm text-[#D4C5B0]">
                             <div>
                               <h4 className="font-semibold text-[#BFA181]/90 text-xs uppercase tracking-wider mb-1">The Distress</h4>
@@ -635,6 +744,76 @@ export default function Home() {
                 </div>
               </section>
 
+              <section className="mb-16 md:mb-24 scroll-mt-20 md:scroll-mt-24">
+                <h3 className="text-sm uppercase tracking-wider text-[#BFA181] mb-4 font-medium">How We Work Together</h3>
+                <div className="max-w-xl space-y-6">
+                  <p className="text-[#D4C5B0] text-sm">
+                    From discovery to deployment, I follow a proven process that ensures your project is delivered on time, within scope, and exceeding expectations.
+                  </p>
+
+                  <div className="space-y-4">
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 rounded-lg bg-[#BFA181]/20 border border-[#BFA181]/30 flex items-center justify-center">
+                          <span className="text-[#BFA181] font-bold">1</span>
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-[#F4F4F4] font-semibold mb-1 text-sm">Discovery Call</h4>
+                        <p className="text-[#D4C5B0] text-xs mb-1">Understand your goals, challenges, and requirements</p>
+                        <span className="text-[#BFA181]/80 text-[10px] font-medium">Week 1</span>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 rounded-lg bg-[#BFA181]/20 border border-[#BFA181]/30 flex items-center justify-center">
+                          <span className="text-[#BFA181] font-bold">2</span>
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-[#F4F4F4] font-semibold mb-1 text-sm">Proposal & Planning</h4>
+                        <p className="text-[#D4C5B0] text-xs mb-1">Detailed roadmap, timeline, and technical architecture</p>
+                        <span className="text-[#BFA181]/80 text-[10px] font-medium">Week 1-2</span>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 rounded-lg bg-[#BFA181]/20 border border-[#BFA181]/30 flex items-center justify-center">
+                          <span className="text-[#BFA181] font-bold">3</span>
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-[#F4F4F4] font-semibold mb-1 text-sm">Development & Testing</h4>
+                        <p className="text-[#D4C5B0] text-xs mb-1">Agile development with weekly progress updates and demos</p>
+                        <span className="text-[#BFA181]/80 text-[10px] font-medium">Week 2-6 (varies by project)</span>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 rounded-lg bg-[#BFA181]/20 border border-[#BFA181]/30 flex items-center justify-center">
+                          <span className="text-[#BFA181] font-bold">4</span>
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-[#F4F4F4] font-semibold mb-1 text-sm">Launch & Support</h4>
+                        <p className="text-[#D4C5B0] text-xs mb-1">Smooth deployment with ongoing maintenance and optimization</p>
+                        <span className="text-[#BFA181]/80 text-[10px] font-medium">Week 6+ (ongoing)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-[#BFA181]/10 p-4 rounded-lg border border-[#BFA181]/20 mt-6">
+                    <p className="text-[#D4C5B0] text-xs">
+                      <span className="text-[#BFA181] font-semibold">E-commerce projects:</span> Delivered in 40 days guaranteed.
+                      <span className="block mt-1"><span className="text-[#BFA181] font-semibold">Custom software:</span> Timelines vary based on complexity—typically 2-6 months.</span>
+                    </p>
+                  </div>
+                </div>
+              </section>
+
               <section id="contact" ref={sectionRefs.contact} className="mb-16 md:mb-24 scroll-mt-20 md:scroll-mt-24">
                 <h3 className="text-sm uppercase tracking-wider text-[#BFA181] mb-4 font-medium">Let's Work Together</h3>
                 <div className="max-w-xl space-y-8">
@@ -664,14 +843,49 @@ export default function Home() {
                     </div>
                   </div>
 
+                  <div className="bg-[#1C1C1C]/80 backdrop-blur-md rounded-lg p-6 border border-[#BFA181]/20 shadow-lg">
+                    <h4 className="text-[#BFA181] font-semibold mb-4 text-sm">Choose Your Preferred Contact Method</h4>
+                    <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                      <a
+                        href="mailto:Bamidele.ajibola.alpha@gmail.com"
+                        className="flex items-center justify-center space-x-2 bg-[#BFA181]/10 hover:bg-[#BFA181]/20 border border-[#BFA181]/30 hover:border-[#BFA181]/50 rounded-lg p-4 transition-all duration-300 group"
+                      >
+                        <Mail size={18} className="text-[#BFA181]" />
+                        <div className="text-left">
+                          <p className="text-[#F4F4F4] text-sm font-medium group-hover:text-[#BFA181] transition-colors">Send Email</p>
+                          <p className="text-[#D4C5B0] text-[10px]">Quick inquiry</p>
+                        </div>
+                      </a>
+                      <a
+                        href="https://linkedin.com/in/bamidele-ajibola-9b7913178"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center space-x-2 bg-[#BFA181]/10 hover:bg-[#BFA181]/20 border border-[#BFA181]/30 hover:border-[#BFA181]/50 rounded-lg p-4 transition-all duration-300 group"
+                      >
+                        <Linkedin size={18} className="text-[#BFA181]" />
+                        <div className="text-left">
+                          <p className="text-[#F4F4F4] text-sm font-medium group-hover:text-[#BFA181] transition-colors">Connect on LinkedIn</p>
+                          <p className="text-[#D4C5B0] text-[10px]">Professional network</p>
+                        </div>
+                      </a>
+                    </div>
+                    <div className="flex items-center justify-center space-x-2 text-xs text-[#D4C5B0]/80">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#BFA181]">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg>
+                      <span>I respond to all inquiries within 24 hours</span>
+                    </div>
+                  </div>
+
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="bg-[#1C1C1C]/80 backdrop-blur-md rounded-lg p-5 border border-[#BFA181]/20 hover:border-[#BFA181]/40 transition-all duration-300">
-                      <h5 className="text-[#BFA181] font-semibold mb-2 text-sm">Quick Response</h5>
-                      <p className="text-[#D4C5B0] text-xs">I typically respond to inquiries within 24 hours</p>
+                      <h5 className="text-[#BFA181] font-semibold mb-2 text-sm">Free Consultation</h5>
+                      <p className="text-[#D4C5B0] text-xs">30-minute strategy call to discuss your project needs and goals</p>
                     </div>
                     <div className="bg-[#1C1C1C]/80 backdrop-blur-md rounded-lg p-5 border border-[#BFA181]/20 hover:border-[#BFA181]/40 transition-all duration-300">
-                      <h5 className="text-[#BFA181] font-semibold mb-2 text-sm">Free Consultation</h5>
-                      <p className="text-[#D4C5B0] text-xs">30-minute strategy call to discuss your project</p>
+                      <h5 className="text-[#BFA181] font-semibold mb-2 text-sm">Transparent Process</h5>
+                      <p className="text-[#D4C5B0] text-xs">Clear timelines, milestones, and regular communication throughout</p>
                     </div>
                   </div>
 
