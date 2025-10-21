@@ -638,7 +638,7 @@ export default function Home() {
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 items-start mb-4">
                         <div className="sm:col-span-1">
-                          <div className="relative aspect-w-16 aspect-h-9 rounded-md overflow-hidden border border-[#BFA181]/20 shadow-md">
+                          <div className="relative aspect-video rounded-md overflow-hidden border border-[#BFA181]/20 shadow-md">
                             <Image
                               src={project.image}
                               alt={project.title}
