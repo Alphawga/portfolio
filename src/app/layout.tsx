@@ -20,12 +20,15 @@ const lora = Lora({
 })
 
 export const metadata = {
-  title: "Bamidele Ajibola - Full Stack & Mobile Developer",
-  description: "I help founders turn ideas into seamless digital experiences across web and mobile platforms",
+  title: "Ajibola Bamidele - Software Developer | Custom Software & E-commerce Solutions",
+  description: "Software Developer specializing in custom software solutions, e-commerce platforms (40-day delivery), and AI automation. 8+ years experience, 50+ projects delivered.",
   icons: {
     icon: [
-      { url: '/icons/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico' }
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icon.svg', type: 'image/svg+xml', sizes: 'any' }
+    ],
+    apple: [
+      { url: '/apple-icon.svg', type: 'image/svg+xml' }
     ]
   }
 }
